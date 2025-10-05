@@ -1,0 +1,98 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ExternalLink } from "lucide-react";
+import flowschoolImg from "@/assets/project-flowschool.jpg";
+import expensiqImg from "@/assets/project-expensiq.jpg";
+import codeinquiryImg from "@/assets/project-codeinquiry.jpg";
+
+const projects = [
+  {
+    title: "Flowschool",
+    description: "AI-powered learning management platform that revolutionizes online education with intelligent course recommendations and personalized learning paths.",
+    image: flowschoolImg,
+    link: "https://flowcourses.vercel.app/",
+    tags: ["Next.js", "AI", "Education"],
+  },
+  {
+    title: "Expensiq / Expensly",
+    description: "AI-powered expense tracking system with automated categorization and financial insights using Gemini AI integration.",
+    image: expensiqImg,
+    link: "https://finbot-expense-tracker.vercel.app/",
+    tags: ["Gemini AI", "Fintech", "SaaS"],
+  },
+  {
+    title: "CodeInquiryHub",
+    description: "Comprehensive interview preparation platform with coding challenges, technical questions, and mock interviews.",
+    image: codeinquiryImg,
+    link: "https://codeinquiryhub.web.app/",
+    tags: ["React", "Firebase", "Education"],
+  },
+];
+
+const Projects = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="works" className="py-20 md:py-32 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
+        >
+          <div className="text-center">
+            <h2 className="text-4xl md:text-6xl font-bold">Recent Projects</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.a
+                key={project.title}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                  </div>
+                  <p className="text-muted-foreground">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
