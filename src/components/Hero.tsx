@@ -1,20 +1,9 @@
 import { motion } from "framer-motion";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import profilePhoto from "@/assets/profile-nobg.png";
 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-background">
-      {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-background/90" />
-        <img
-          src={profilePhoto}
-          alt="Yash Verma"
-          className="w-full h-full object-cover object-center opacity-90"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/70" />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div className="relative min-h-[70vh] flex flex-col justify-center">
@@ -57,13 +46,23 @@ const Hero = () => {
               VERMA
             </motion.h1>
 
-            {/* Right Side - Role Description */}
+            {/* Right Side - Profile Image and Role */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="lg:mb-4"
+              className="lg:mb-4 flex flex-col lg:flex-row items-start lg:items-end gap-6 lg:gap-8"
             >
+              {/* Profile Photo */}
+              <div className="w-48 md:w-56 lg:w-64 xl:w-72 flex-shrink-0">
+                <img
+                  src={profilePhoto}
+                  alt="Yash Verma"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Role Description */}
               <div className="space-y-4 lg:space-y-6">
                 <div className="space-y-3">
                   <h3 
