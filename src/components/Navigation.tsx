@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import yvLogo from "@/assets/yv-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +34,9 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl md:text-2xl font-bold text-foreground hover:text-accent transition-colors italic"
+            className="hover:opacity-80 transition-opacity"
           >
-            Yash Verma.
+            <img src={yvLogo} alt="YV Logo" className="h-8 md:h-10 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
