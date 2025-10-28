@@ -38,15 +38,15 @@ const PillNav = ({
 }: PillNavProps) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const circleRefs = useRef([]);
-  const tlRefs = useRef([]);
-  const activeTweenRefs = useRef([]);
-  const logoImgRef = useRef(null);
-  const logoTweenRef = useRef(null);
-  const hamburgerRef = useRef(null);
-  const mobileMenuRef = useRef(null);
-  const navItemsRef = useRef(null);
-  const logoRef = useRef(null);
+  const circleRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const tlRefs = useRef<(gsap.core.Timeline | null)[]>([]);
+  const activeTweenRefs = useRef<(gsap.core.Tween | null)[]>([]);
+  const logoImgRef = useRef<HTMLImageElement | null>(null);
+  const logoTweenRef = useRef<gsap.core.Tween | null>(null);
+  const hamburgerRef = useRef<HTMLButtonElement | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+  const navItemsRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLAnchorElement | null>(null);
 
   useEffect(() => {
     const layout = () => {
