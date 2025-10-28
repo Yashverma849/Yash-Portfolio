@@ -35,20 +35,20 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="works" className="py-20 md:py-32 bg-background">
+    <section id="works" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="space-y-12"
+          className="space-y-8 sm:space-y-12"
         >
           <div className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold">Recent Projects</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Recent Projects</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <motion.a
                 key={project.title}
@@ -58,7 +58,7 @@ const Projects = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group bg-card rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-2"
+                className="group bg-card rounded-xl sm:rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-2"
               >
                 <div className="aspect-video overflow-hidden">
                   <img
@@ -67,14 +67,14 @@ const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold group-hover:text-accent transition-colors">
+                <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-xl sm:text-2xl font-bold group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-muted-foreground group-hover:text-accent transition-colors" />
                   </div>
-                  <p className="text-muted-foreground">{project.description}</p>
+                  <p className="text-sm sm:text-base text-muted-foreground">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span

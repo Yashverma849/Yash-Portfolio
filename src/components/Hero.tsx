@@ -11,33 +11,33 @@ const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex gap-8 mb-12 lg:mb-16"
+          className="flex flex-wrap gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16"
         >
           <div className="text-left">
-            <div className="text-3xl lg:text-4xl font-light text-foreground">+200</div>
-            <div className="text-xs lg:text-sm text-muted-foreground mt-1">Project completed</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+200</div>
+            <div className="text-xs sm:text-sm text-muted-foreground mt-1">Project completed</div>
           </div>
           <div className="text-left">
-            <div className="text-3xl lg:text-4xl font-light text-foreground">+50</div>
-            <div className="text-xs lg:text-sm text-muted-foreground mt-1">Startups raised</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+50</div>
+            <div className="text-xs sm:text-sm text-muted-foreground mt-1">Startups raised</div>
           </div>
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[60vh]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[50vh] sm:min-h-[60vh]">
           {/* Left Side - Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h1 className="text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tight text-foreground leading-none" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight tracking-tight text-foreground leading-none" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Hello
               </h1>
-              <p className="text-sm md:text-base text-muted-foreground mt-4 flex items-center gap-2">
-                <span className="w-8 h-px bg-muted-foreground"></span>
-                It's Yash Verma, a full stack developer
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground mt-3 sm:mt-4 flex items-center gap-2">
+                <span className="w-6 sm:w-8 h-px bg-muted-foreground"></span>
+                <span className="break-words">It's Yash Verma, a full stack developer</span>
               </p>
             </motion.div>
 
@@ -45,14 +45,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="pt-6 space-y-2"
+              className="pt-4 sm:pt-6 space-y-2"
             >
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                 Specialized in Web Development,<br />
                 AI-powered SaaS, and<br />
                 Front End Development.
               </p>
-              <div className="inline-flex items-center gap-2 text-xs text-accent">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm text-accent">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                 <span>Available for new opportunities</span>
               </div>
@@ -64,12 +64,12 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
           >
-            <div className="w-full max-w-md lg:max-w-lg">
+            <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg">
               <img
                 src={profilePhoto}
-                alt="Yash Verma"
+                alt="Yash Verma - Full Stack Developer"
                 className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
@@ -81,12 +81,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="absolute bottom-8 left-8 flex items-center gap-2 text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
+          className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex items-center gap-2 text-xs sm:text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
           onClick={() => {
             document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <span>Scroll down</span>
+          <span className="hidden sm:inline">Scroll down</span>
           <ChevronDown className="w-4 h-4 animate-bounce" />
         </motion.div>
       </div>
