@@ -3,6 +3,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
+interface PillNavProps {
+  logo: string;
+  logoAlt?: string;
+  items: Array<{
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  }>;
+  activeHref: string;
+  className?: string;
+  ease?: string;
+  baseColor?: string;
+  pillColor?: string;
+  hoveredPillTextColor?: string;
+  pillTextColor?: string;
+  onMobileMenuClick?: () => void;
+  initialLoadAnimation?: boolean;
+}
+
 const PillNav = ({
   logo,
   logoAlt = 'Logo',
@@ -16,7 +35,7 @@ const PillNav = ({
   pillTextColor,
   onMobileMenuClick = () => {},
   initialLoadAnimation = true
-}) => {
+}: PillNavProps) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const circleRefs = useRef([]);
