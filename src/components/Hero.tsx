@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import profilePhoto from "@/assets/profile-nobg.png";
+import yvLogo from "@/assets/yv-logo.png";
 
 const Hero = () => {
   return (
@@ -35,9 +36,12 @@ const Hero = () => {
               <h1 className="text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tight text-foreground leading-none" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Hello
               </h1>
-              <p className="text-sm md:text-base text-muted-foreground mt-4 flex items-center gap-2">
+              <div className="flex items-center gap-4 mt-6">
                 <span className="w-8 h-px bg-muted-foreground"></span>
-                It's Yash Verma, a full stack developer
+                <img src={yvLogo} alt="YV Logo" className="h-12 md:h-14 w-auto" />
+              </div>
+              <p className="text-sm md:text-base text-muted-foreground mt-4">
+                A full stack developer
               </p>
             </motion.div>
 
