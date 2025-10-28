@@ -4,7 +4,7 @@ import profilePhoto from "@/assets/profile-nobg.png";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-background">
+    <section id="home" className="relative min-h-screen flex items-center bg-background pt-16 md:pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         {/* Stats Section */}
         <motion.div 
