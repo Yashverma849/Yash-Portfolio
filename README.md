@@ -1,73 +1,87 @@
-# Welcome to your Lovable project
+# Yash Verma - Portfolio Website
 
-## Project info
+A modern, responsive portfolio website showcasing my work as a full-stack developer.
 
-**URL**: https://lovable.dev/projects/a92ffc9f-bbba-4463-b493-fc68097024d2
+## Features
 
-## How can I edit this code?
+- **Modern Design**: Clean, minimalist interface with smooth animations
+- **Responsive Layout**: Optimized for all device sizes
+- **Interactive Components**: Built with React and Framer Motion
+- **Professional Showcase**: Displays projects, skills, and achievements
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Animations**: Framer Motion
+- **Build Tool**: Vite
+- **Icons**: Lucide React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a92ffc9f-bbba-4463-b493-fc68097024d2) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd yashverma-ai-portfolio
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # React components
+├── pages/         # Page components
+├── assets/        # Images and static assets
+├── hooks/         # Custom React hooks
+├── lib/           # Utility functions
+└── main.tsx       # Application entry point
+```
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The project can be deployed to any static hosting service like:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
 
-## How can I deploy this project?
+Build the project and deploy the `dist` folder:
+```bash
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/a92ffc9f-bbba-4463-b493-fc68097024d2) and click on Share -> Publish.
+## Contact
 
-## Can I connect a custom domain to my Lovable project?
+- **Email**: [Your Email]
+- **LinkedIn**: [Your LinkedIn]
+- **GitHub**: [Your GitHub]
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Built with ❤️ by Yash Verma

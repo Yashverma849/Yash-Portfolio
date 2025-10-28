@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import profilePhoto from "@/assets/profile-nobg.png";
+// import profilePhoto from "@/assets/profile-nobg.png";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap gap-6 sm:gap-8 mb-8 sm:mb-12 lg:mb-16"
+          className="flex flex-wrap gap-6 sm:gap-8 mb-4 sm:mb-6 lg:mb-8"
         >
           <div className="text-left">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+200</div>
@@ -24,9 +24,9 @@ const Hero = () => {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[50vh] sm:min-h-[60vh]">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Side - Text Content */}
-          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+          <div className="space-y-3 sm:space-y-4 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="pt-4 sm:pt-6 space-y-2"
+              className="pt-2 sm:pt-3 space-y-2"
             >
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                 Specialized in Web Development,<br />
@@ -64,13 +64,13 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex justify-center lg:justify-end order-1 lg:order-2"
+            className="flex justify-center items-center order-1 lg:order-2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] -mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-32"
           >
-            <div className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg">
+            <div className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] h-full flex items-center justify-center">
               <img
-                src={profilePhoto}
+                src="/assets/profile-nobg.png"
                 alt="Yash Verma - Full Stack Developer"
-                className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-auto max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
           </motion.div>
@@ -81,7 +81,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 flex items-center gap-2 text-xs sm:text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
+          className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground cursor-pointer hover:text-foreground transition-colors"
           onClick={() => {
             document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
           }}

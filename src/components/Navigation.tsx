@@ -1,7 +1,10 @@
+'use client'
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import yvLogo from "@/assets/yv-logo.png";
+import Image from "next/image";
+// import yvLogo from "@/assets/yv-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +39,11 @@ const Navigation = () => {
             onClick={() => scrollToSection("home")}
             className="hover:opacity-80 transition-opacity"
           >
-            <img src={yvLogo} alt="YV Logo" className="h-8 md:h-10 w-auto" />
+            <Image src="/assets/yv-logo.png" alt="YV Logo" width={40} height={40} className="h-8 md:h-10 w-auto" />
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => scrollToSection("home")}
               className="text-sm font-medium hover:text-accent transition-colors"
@@ -65,6 +68,10 @@ const Navigation = () => {
             >
               Skills
             </button>
+          </div>
+
+          {/* Contact Button - Right Corner */}
+          <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection("contact")}
               className="bg-foreground text-background hover:bg-accent hover:text-white"

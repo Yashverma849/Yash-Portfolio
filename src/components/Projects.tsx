@@ -2,29 +2,29 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
-import flowschoolImg from "@/assets/project-flowschool.jpg";
-import expensiqImg from "@/assets/project-expensiq.jpg";
-import codeinquiryImg from "@/assets/project-codeinquiry.jpg";
+// import flowschoolImg from "@/assets/project-flowschool.jpg";
+// import expensiqImg from "@/assets/project-expensiq.jpg";
+// import codeinquiryImg from "@/assets/project-codeinquiry.jpg";
 
 const projects = [
   {
     title: "Flowschool",
     description: "AI-powered learning management platform that revolutionizes online education with intelligent course recommendations and personalized learning paths.",
-    image: flowschoolImg,
+    image: "/assets/project-flowschool.jpg",
     link: "https://flowcourses.vercel.app/",
     tags: ["Next.js", "AI", "Education"],
   },
   {
     title: "Expensiq / Expensly",
     description: "AI-powered expense tracking system with automated categorization and financial insights using Gemini AI integration.",
-    image: expensiqImg,
+    image: "/assets/project-expensiq.jpg",
     link: "https://finbot-expense-tracker.vercel.app/",
     tags: ["Gemini AI", "Fintech", "SaaS"],
   },
   {
     title: "CodeInquiryHub",
     description: "Comprehensive interview preparation platform with coding challenges, technical questions, and mock interviews.",
-    image: codeinquiryImg,
+    image: "/assets/project-codeinquiry.jpg",
     link: "https://codeinquiryhub.web.app/",
     tags: ["React", "Firebase", "Education"],
   },
@@ -35,7 +35,7 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="works" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background">
+    <section id="projects" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
