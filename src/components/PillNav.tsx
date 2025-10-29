@@ -278,7 +278,7 @@ const PillNav = ({
     ['--logo']: '36px',
     ['--pill-pad-x']: '18px',
     ['--pill-gap']: '3px'
-  };
+  } as React.CSSProperties;
 
   return (
     <div className="absolute top-[1em] z-[1000] w-full left-0 flex justify-center">
