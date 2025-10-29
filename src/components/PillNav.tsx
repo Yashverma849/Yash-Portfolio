@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { gsap } from 'gsap';
 
 interface PillNavProps {
@@ -138,7 +138,7 @@ const PillNav = ({
     return () => window.removeEventListener('resize', onResize);
   }, [items, ease, initialLoadAnimation]);
 
-  const handleEnter = i => {
+  const handleEnter = (i: number) => {
     const tl = tlRefs.current[i];
     if (!tl) return;
     activeTweenRefs.current[i]?.kill();
@@ -162,7 +162,7 @@ const PillNav = ({
     });
   };
 
-  const handleLeave = i => {
+  const handleLeave = (i: number) => {
     const tl = tlRefs.current[i];
     if (!tl) return;
     activeTweenRefs.current[i]?.kill();
@@ -250,17 +250,17 @@ const PillNav = ({
     onMobileMenuClick?.();
   };
 
-  const isExternalLink = href =>
+  const isExternalLink = (href: string): boolean =>
     href.startsWith('http://') ||
     href.startsWith('https://') ||
     href.startsWith('//') ||
     href.startsWith('mailto:') ||
     href.startsWith('tel:');
 
-  const isHashLink = href => href && href.startsWith('#');
-  const isRouterLink = href => href && !isExternalLink(href) && !isHashLink(href);
+  const isHashLink = (href: string): boolean => !!href && href.startsWith('#');
+  const isRouterLink = (href: string): boolean => !!href && !isExternalLink(href) && !isHashLink(href);
 
-  const handleLinkClick = (href) => {
+  const handleLinkClick = (href: string) => {
     if (isHashLink(href)) {
       const element = document.querySelector(href);
       if (element) {
@@ -437,11 +437,11 @@ const PillNav = ({
               background: 'var(--pill-bg, #fff)',
               color: 'var(--pill-text, #000)'
             };
-            const hoverIn = e => {
+            const hoverIn = (e: MouseEvent<HTMLAnchorElement>) => {
               e.currentTarget.style.background = '#000000';
               e.currentTarget.style.color = '#ffffff';
             };
-            const hoverOut = e => {
+            const hoverOut = (e: MouseEvent<HTMLAnchorElement>) => {
               e.currentTarget.style.background = 'var(--pill-bg, #fff)';
               e.currentTarget.style.color = 'var(--pill-text, #000)';
             };
