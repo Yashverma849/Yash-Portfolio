@@ -7,17 +7,25 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Yash Verma - Full Stack Developer & AI SaaS Builder',
   description: 'Full Stack Developer specialized in Web Development, AI-powered SaaS, and Modern Frontend Design. Building scalable applications with Next.js, React, and AI integrations.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/assets/yv-logo.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: { url: '/assets/yv-logo.png' },
+    shortcut: { url: '/favicon.ico' },
+  },
   authors: [{ name: 'Yash Verma' }],
   openGraph: {
     title: 'Yash Verma - Full Stack Developer & AI SaaS Builder',
     description: 'Full Stack Developer specialized in Web Development, AI-powered SaaS, and Modern Frontend Design.',
     type: 'website',
-    images: ['/src/assets/profile-photo.jpg'],
+    images: ['/assets/profile-photo.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@yashverma_dev',
-    images: ['/src/assets/profile-photo.jpg'],
+    images: ['/assets/profile-photo.jpg'],
   },
 }
 
