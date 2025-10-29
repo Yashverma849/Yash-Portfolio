@@ -14,12 +14,12 @@ const Hero = () => {
           className="flex flex-wrap gap-6 sm:gap-8 mb-4 sm:mb-6 lg:mb-8"
         >
           <div className="text-left">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+200</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+20</div>
             <div className="text-xs sm:text-sm text-muted-foreground mt-1">Project completed</div>
           </div>
           <div className="text-left">
-            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+50</div>
-            <div className="text-xs sm:text-sm text-muted-foreground mt-1">Startups raised</div>
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground">+10</div>
+            <div className="text-xs sm:text-sm text-muted-foreground mt-1">hackathons completed</div>
           </div>
         </motion.div>
 
