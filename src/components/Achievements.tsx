@@ -29,7 +29,7 @@ const Achievements = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-secondary/30">
+    <section className="pt-2 sm:pt-3 md:pt-4 lg:pt-4 pb-12 sm:pb-16 md:pb-24 lg:pb-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

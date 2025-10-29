@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description: 'Full Stack Developer specialized in Web Development, AI-powered SaaS, and Modern Frontend Design. Building scalable applications with Next.js, React, and AI integrations.',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/assets/yv-logo.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon.ico?v=2' },
+      { url: '/assets/yv-logo.png?v=2', type: 'image/png', sizes: '32x32' },
     ],
-    apple: { url: '/assets/yv-logo.png' },
-    shortcut: { url: '/favicon.ico' },
+    apple: { url: '/assets/yv-logo.png?v=2' },
+    shortcut: { url: '/favicon.ico?v=2' },
   },
   authors: [{ name: 'Yash Verma' }],
   openGraph: {
