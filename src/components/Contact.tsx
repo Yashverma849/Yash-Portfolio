@@ -119,7 +119,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://github.com/yashverma"
+                  href="https://github.com/Yashverma849"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-card rounded-lg sm:rounded-xl hover:shadow-soft transition-all duration-300 hover:-translate-y-1 group"

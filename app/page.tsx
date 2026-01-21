@@ -1,6 +1,7 @@
 'use client'
 
 import PillNav from '@/components/PillNav'
+import Chatbot from '@/components/chatbot'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
@@ -39,6 +40,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <Chatbot />
 
       <section className="p-0 mb-2 sm:mb-3 md:mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
