@@ -288,8 +288,7 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
           className={cx(
             'inline-flex items-center',
             'motion-reduce:transition-none',
-            scaleOnHover &&
-              'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+            scaleOnHover && 'logo-hover-transition group-hover/item:scale-120'
           )}
           aria-hidden={!!(item as NodeLogo).href && !(item as NodeLogo).ariaLabel}
         >
@@ -302,8 +301,7 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
             '[-webkit-user-drag:none] pointer-events-none',
             '[image-rendering:-webkit-optimize-contrast]',
             'motion-reduce:transition-none',
-            scaleOnHover &&
-              'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+            scaleOnHover && 'logo-hover-transition group-hover/item:scale-120'
           )}
           src={(item as ImageLogo).src}
           srcSet={(item as ImageLogo).srcSet}
