@@ -33,7 +33,6 @@ export default function Home() {
         ease="power2.easeOut"
         baseColor="#000000"
         pillColor="#ffffff"
-        hoveredPillTextColor="#000000"
         pillTextColor="#000000"
       />
       <Hero />

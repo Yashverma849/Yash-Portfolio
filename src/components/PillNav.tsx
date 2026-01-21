@@ -16,7 +16,6 @@ interface PillNavProps {
   ease?: string;
   baseColor?: string;
   pillColor?: string;
-  hoveredPillTextColor?: string;
   pillTextColor?: string;
   onMobileMenuClick?: () => void;
   initialLoadAnimation?: boolean;
@@ -31,7 +30,6 @@ const PillNav = ({
   ease = 'power3.easeOut',
   baseColor = '#fff',
   pillColor = '#060010',
-  hoveredPillTextColor = '#060010',
   pillTextColor,
   onMobileMenuClick = () => {},
   initialLoadAnimation = true
@@ -250,15 +248,7 @@ const PillNav = ({
     onMobileMenuClick?.();
   };
 
-  const isExternalLink = (href: string): boolean =>
-    href.startsWith('http://') ||
-    href.startsWith('https://') ||
-    href.startsWith('//') ||
-    href.startsWith('mailto:') ||
-    href.startsWith('tel:');
-
   const isHashLink = (href: string): boolean => !!href && href.startsWith('#');
-  const isRouterLink = (href: string): boolean => !!href && !isExternalLink(href) && !isHashLink(href);
 
   const handleLinkClick = (href: string) => {
     if (isHashLink(href)) {

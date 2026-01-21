@@ -37,7 +37,7 @@ const Hero = () => {
               </h1>
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground mt-3 sm:mt-4 flex items-center gap-2">
                 <span className="w-6 sm:w-8 h-px bg-muted-foreground"></span>
-                <span className="break-words">It's Yash Verma, Full Stack Developer</span>
+                <span className="break-words">It&apos;s Yash Verma, Full Stack Developer</span>
               </p>
             </motion.div>
 

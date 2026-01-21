@@ -98,7 +98,7 @@ const Contact = () => {
               <div className="space-y-3 sm:space-y-4">
                 <h3 className="text-xl sm:text-2xl font-bold">Connect With Me</h3>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Let's connect on social media or drop me an email.
+                  Let&apos;s connect on social media or drop me an email.
                 </p>
               </div>
 

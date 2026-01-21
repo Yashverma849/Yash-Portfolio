@@ -64,7 +64,7 @@ const useResizeObserver = (
   dependencies: React.DependencyList
 ) => {
   useEffect(() => {
-    if (!(window as any).ResizeObserver) {
+    if (!(window as Window & { ResizeObserver?: typeof ResizeObserver }).ResizeObserver) {
       const handleResize = () => callback()
       window.addEventListener('resize', handleResize)
       callback()
@@ -73,7 +73,7 @@ const useResizeObserver = (
 
     const observers = elements.map(ref => {
       if (!ref.current) return null
-      const Observer = (window as any).ResizeObserver as typeof ResizeObserver
+      const Observer = (window as Window & { ResizeObserver?: typeof ResizeObserver }).ResizeObserver as typeof ResizeObserver
       const observer = new Observer(() => callback())
       observer.observe(ref.current as Element)
       return observer
@@ -320,7 +320,7 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
         ? ((item as NodeLogo).ariaLabel ?? (item as NodeLogo).title)
         : ((item as ImageLogo).alt ?? (item as ImageLogo).title)
 
-      const inner = (item as any).href ? (
+      const inner = item.href ? (
         <a
           className={cx(
             'inline-flex items-center no-underline rounded',
@@ -328,7 +328,7 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
             'hover:opacity-80',
             'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2'
           )}
-          href={(item as any).href}
+          href={item.href}
           aria-label={itemAriaLabel || 'logo link'}
           target="_blank"
           rel="noreferrer noopener"
