@@ -37,7 +37,7 @@ const Hero = () => {
               </h1>
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground mt-3 sm:mt-4 flex items-center gap-2">
                 <span className="w-6 sm:w-8 h-px bg-muted-foreground"></span>
-                <span className="break-words">It's Yash Verma, a full stack developer</span>
+                <span className="break-words">It's Yash Verma, Full Stack Developer</span>
               </p>
             </motion.div>
 
@@ -49,12 +49,11 @@ const Hero = () => {
             >
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                 Specialized in Web Development,<br />
-                AI-powered SaaS, and<br />
-                Front End Development.
+                Experienced With Building Scalable Agentic AI solutions<br />
               </p>
               <div className="inline-flex items-center gap-2 text-xs sm:text-sm text-accent">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                <span>Available for new opportunities</span>
+                <span>Available For New Opportunities</span>
               </div>
             </motion.div>
           </div>

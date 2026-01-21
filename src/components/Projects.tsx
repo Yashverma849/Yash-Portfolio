@@ -2,29 +2,26 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
-// import flowschoolImg from "@/assets/project-flowschool.jpg";
-// import expensiqImg from "@/assets/project-expensiq.jpg";
-// import codeinquiryImg from "@/assets/project-codeinquiry.jpg";
 
 const projects = [
   {
     title: "Flowschool",
     description: "AI-powered learning management platform that revolutionizes online education with intelligent course recommendations and personalized learning paths.",
-    image: "/assets/project-flowschool.jpg",
+    image: "/assets/flowschool.png",
     link: "https://flowcourses.vercel.app/",
-    tags: ["Next.js", "AI", "Education"],
+    tags: ["Next.js", "Supabase", "Education", "Youtube Embedding"],
   },
   {
     title: "Expensiq / Expensly",
     description: "AI-powered expense tracking system with automated categorization and financial insights using Gemini AI integration.",
-    image: "/assets/project-expensiq.jpg",
+    image: "/assets/expensiq.png",
     link: "https://finbot-expense-tracker.vercel.app/",
     tags: ["Gemini AI", "Fintech", "SaaS"],
   },
   {
     title: "CodeInquiryHub",
     description: "Comprehensive interview preparation platform with coding challenges, technical questions, and mock interviews.",
-    image: "/assets/project-codeinquiry.jpg",
+    image: "/assets/codeinquiryhub.png",
     link: "https://codeinquiryhub.web.app/",
     tags: ["React", "Firebase", "Education"],
   },
