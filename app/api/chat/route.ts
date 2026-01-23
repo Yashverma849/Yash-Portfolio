@@ -4,82 +4,53 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     
-    // Try different possible endpoint paths
-    const possibleEndpoints = [
-      'https://portfolio-ai-icll.onrender.com/chat',
-      'https://portfolio-ai-icll.onrender.com/api/chat',
-    ];
+    // Get backend URL from environment variable, with fallback
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://portfolio-ai-icl1.onrender.com';
     
-    let lastError: Error | null = null;
-    let lastResponse: Response | null = null;
+    // The Flask backend endpoint is /chat (not /api/chat)
+    const apiUrl = `${backendUrl}/chat`;
     
-    for (const apiUrl of possibleEndpoints) {
-      try {
-        console.log('Trying endpoint:', apiUrl);
-        
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(body),
-          // Add timeout to prevent hanging
-          signal: AbortSignal.timeout(30000), // 30 second timeout
-        });
+    console.log('Calling backend API:', apiUrl);
+    
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+      // Add timeout to prevent hanging
+      signal: AbortSignal.timeout(30000), // 30 second timeout
+    });
 
-        console.log('Response status:', response.status, 'for', apiUrl);
+    console.log('Backend response status:', response.status);
 
-        if (response.ok) {
-          const data = await response.json();
-          return NextResponse.json(data, { status: 200 });
-        }
-        
-        // If 404, try next endpoint
-        if (response.status === 404) {
-          console.log('404 for', apiUrl, '- trying next endpoint');
-          lastResponse = response;
-          continue;
-        }
-        
-        // For other errors, try to get error message
-        let errorMessage = `API responded with status: ${response.status}`;
-        try {
-          const errorData = await response.text();
-          if (errorData) {
-            errorMessage += ` - ${errorData}`;
-          }
-        } catch (e) {
-          // Ignore if we can't read the error body
-        }
-        
-        lastResponse = response;
-        lastError = new Error(errorMessage);
-        
-        // If it's not a 404, don't try other endpoints
-        break;
-      } catch (error) {
-        console.error('Error trying endpoint', apiUrl, ':', error);
-        lastError = error instanceof Error ? error : new Error(String(error));
-        
-        // If it's a network error and we have more endpoints, continue
-        if (possibleEndpoints.indexOf(apiUrl) < possibleEndpoints.length - 1) {
-          continue;
-        }
-      }
+    if (response.ok) {
+      const data = await response.json();
+      return NextResponse.json(data, { status: 200 });
     }
     
-    // If we get here, all endpoints failed
-    if (lastResponse) {
+    // Handle error responses
+    let errorMessage = `API responded with status: ${response.status}`;
+    try {
+      const errorData = await response.text();
+      if (errorData) {
+        errorMessage += ` - ${errorData}`;
+      }
+    } catch (e) {
+      // Ignore if we can't read the error body
+    }
+    
+    if (response.status === 404) {
       return NextResponse.json(
         { 
-          error: `API endpoint not found (404). Tried: ${possibleEndpoints.join(', ')}`,
-          status: lastResponse.status,
+          error: `API endpoint not found (404). Backend URL: ${apiUrl}`,
+          status: response.status,
         },
         { status: 404 }
       );
     }
     
-    throw lastError || new Error('All endpoints failed');
+    throw new Error(errorMessage);
     
   } catch (error) {
     console.error('Chat API error:', error);
