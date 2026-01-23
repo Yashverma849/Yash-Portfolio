@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { MessageCircle, Send } from "lucide-react";
+import { MessageCircle, Send, Calendar } from "lucide-react";
 import Image from "next/image";
 
 export default function Chatbot() {
@@ -12,6 +12,22 @@ export default function Chatbot() {
     { role: "bot", text: "Hi 👋 How can I help you today?" },
   ]);
   const [input, setInput] = useState("");
+  const [isConnecting, setIsConnecting] = useState(false);
+
+  const connectCalendar = async () => {
+    setIsConnecting(true);
+    try {
+      // Redirect to the OAuth authorize endpoint
+      window.location.href = '/api/oauth/authorize';
+    } catch (error) {
+      console.error('Calendar connection error:', error);
+      setMessages((prev) => [
+        ...prev,
+        { role: "bot", text: "Sorry, I couldn't initiate the calendar connection. Please try again." },
+      ]);
+      setIsConnecting(false);
+    }
+  };
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -150,7 +166,7 @@ export default function Chatbot() {
       {open && (
         <div className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-80 max-w-[calc(100vw-2rem)] sm:max-w-[90vw] rounded-xl bg-gradient-to-b from-green-50 to-green-100 text-gray-800 shadow-lg animate-fade-in">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-green-200">
             <span className="font-semibold text-sm">Yash</span>
             <Image
               src="/assets/yv-logo.png"
@@ -164,6 +180,18 @@ export default function Chatbot() {
               className="text-gray-600 hover:text-gray-800"
             >
               ✕
+            </button>
+          </div>
+
+          {/* Connect Calendar Button */}
+          <div className="px-4 py-2 border-b border-green-200">
+            <button
+              onClick={connectCalendar}
+              disabled={isConnecting}
+              className="w-full flex items-center justify-center gap-2 rounded-md bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 px-3 py-2 text-sm text-white transition-colors"
+            >
+              <Calendar size={16} />
+              {isConnecting ? 'Connecting...' : 'Connect Google Calendar'}
             </button>
           </div>
 
