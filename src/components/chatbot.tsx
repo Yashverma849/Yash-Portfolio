@@ -104,7 +104,7 @@ export default function Chatbot() {
       if (!hasHtmlLinks) {
         // Simple regex to match URLs that aren't already in HTML
         const urlRegex = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/gi;
-        responseText = responseText.replace(urlRegex, (url) => {
+        responseText = responseText.replace(urlRegex, (url: string) => {
           // Add https:// if it's a www link
           const fullUrl = url.startsWith('http') ? url : `https://${url}`;
           return `<a href="${fullUrl}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">${url}</a>`;
