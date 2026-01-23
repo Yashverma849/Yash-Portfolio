@@ -28,7 +28,8 @@ export async function POST(request: NextRequest) {
     console.log('Environment check - NEXT_PUBLIC_CHATBOT_API_URL:', process.env.NEXT_PUBLIC_CHATBOT_API_URL);
     
     // Create timeout signal (compatible approach)
-    const timeoutSignal = createTimeoutSignal(30000); // 30 second timeout
+    // Reduced timeout to fail faster - Render free tier can take 30-60s to wake up
+    const timeoutSignal = createTimeoutSignal(20000); // 20 second timeout
     
     const response = await fetch(apiUrl, {
       method: 'POST',
@@ -79,18 +80,18 @@ export async function POST(request: NextRequest) {
     if (error instanceof Error && error.name === 'AbortError') {
       return NextResponse.json(
         { 
-          error: 'The chat service is currently unavailable. The server might be starting up (Render free tier apps sleep after inactivity). Please try again in a moment.',
-          details: 'Request timeout after 30 seconds'
+          error: 'The chat service is currently unavailable. The server might be starting up (Render free tier apps sleep after inactivity). Please wait 30-60 seconds and try again.',
+          details: 'Request timeout after 20 seconds. The backend server may be waking up from sleep.'
         },
         { status: 503 }
       );
     }
     
     // Check if it's a network/connection error
-    if (errorMessage.includes('fetch') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('ENOTFOUND')) {
+    if (errorMessage.includes('fetch') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('ENOTFOUND') || errorMessage.includes('ETIMEDOUT')) {
       return NextResponse.json(
         { 
-          error: 'Unable to connect to the chat service. Please check that the backend server is running and the URL is correct.',
+          error: 'Unable to connect to the chat service. The backend server may be sleeping (Render free tier) or unavailable. Please try again in a moment.',
           details: errorMessage
         },
         { status: 503 }
