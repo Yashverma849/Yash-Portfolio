@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     // Get backend URL from environment variable, with fallback
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://portfolio-ai-icl1.onrender.com';
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://portfolio-ai-icll.onrender.com';
     
     // The Flask backend endpoint is /chat (not /api/chat)
     const apiUrl = `${backendUrl}/chat`;
