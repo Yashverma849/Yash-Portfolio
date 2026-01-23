@@ -9,6 +9,7 @@ import React, {
   memo,
   CSSProperties
 } from 'react'
+import Image from 'next/image'
 
 type NodeLogo = {
   node: React.ReactNode
@@ -295,7 +296,7 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
           {(item as NodeLogo).node}
         </span>
       ) : (
-        <img
+        <Image
           className={cx(
             'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
             '[-webkit-user-drag:none] pointer-events-none',
@@ -304,14 +305,12 @@ export const LogoLoop = memo((props: LogoLoopProps) => {
             scaleOnHover && 'logo-hover-transition group-hover/item:scale-120'
           )}
           src={(item as ImageLogo).src}
-          srcSet={(item as ImageLogo).srcSet}
           sizes={(item as ImageLogo).sizes}
-          width={(item as ImageLogo).width}
-          height={(item as ImageLogo).height}
+          width={(item as ImageLogo).width ?? 100}
+          height={(item as ImageLogo).height ?? 28}
           alt={(item as ImageLogo).alt ?? ''}
           title={(item as ImageLogo).title}
           loading="lazy"
-          decoding="async"
           draggable={false}
         />
       )

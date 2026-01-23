@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 interface PillNavProps {
   logo: string;
@@ -39,7 +40,7 @@ const PillNav = ({
   const circleRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const tlRefs = useRef<(gsap.core.Timeline | null)[]>([]);
   const activeTweenRefs = useRef<(gsap.core.Tween | null)[]>([]);
-  const logoImgRef = useRef<HTMLImageElement | null>(null);
+  const logoImgRef = useRef<HTMLDivElement | null>(null);
   const logoTweenRef = useRef<gsap.core.Tween | null>(null);
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
@@ -295,7 +296,9 @@ const PillNav = ({
               background: 'var(--base, transparent)'
             }}
         >
-          <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+          <div ref={logoImgRef} className="w-full h-full">
+            <Image src={logo} alt={logoAlt} width={36} height={36} className="w-full h-full object-cover block" />
+          </div>
         </a>
 
         <div

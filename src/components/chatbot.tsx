@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, Send } from "lucide-react";
+import Image from "next/image";
 
 export default function Chatbot() {
   console.log('Chatbot component rendered');
@@ -33,15 +34,15 @@ export default function Chatbot() {
       });
 
       if (!response.ok) {
-        let errorData: any = {};
+        let errorData: { error?: string; details?: string; response?: string } = {};
         try {
           errorData = await response.json();
-        } catch (e) {
+        } catch {
           // If JSON parsing fails, try to get text
           try {
             const text = await response.text();
             errorData = { error: text || 'Unknown error' };
-          } catch (e2) {
+          } catch {
             errorData = { error: 'Unknown error occurred' };
           }
         }
@@ -151,9 +152,11 @@ export default function Chatbot() {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3">
             <span className="font-semibold text-sm">Yash</span>
-            <img
+            <Image
               src="/assets/yv-logo.png"
               alt="Yash"
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full"
             />
             <button

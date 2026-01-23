@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 // import profilePhoto from "@/assets/profile-nobg.png";
 
 const Hero = () => {
@@ -66,9 +67,11 @@ const Hero = () => {
             className="flex justify-center items-center order-1 lg:order-2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] -mt-16 sm:-mt-20 lg:-mt-24 xl:-mt-32"
           >
             <div className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[350px] xl:max-w-[400px] h-full flex items-center justify-center">
-              <img
+              <Image
                 src="/assets/profile-nobg.png"
                 alt="Yash Verma - Full Stack Developer"
+                width={400}
+                height={500}
                 className="w-full h-auto max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
