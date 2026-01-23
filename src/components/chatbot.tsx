@@ -33,16 +33,43 @@ export default function Chatbot() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
+        let errorData: any = {};
+        try {
+          errorData = await response.json();
+        } catch (e) {
+          // If JSON parsing fails, try to get text
+          try {
+            const text = await response.text();
+            errorData = { error: text || 'Unknown error' };
+          } catch (e2) {
+            errorData = { error: 'Unknown error occurred' };
+          }
+        }
+        
         let errorMessage = "Sorry, I'm having trouble connecting right now.";
         
         if (response.status === 404) {
-          errorMessage = "The chat service endpoint was not found. Please check the API configuration.";
+          errorMessage = errorData.error || "The chat service endpoint was not found. Please check the API configuration.";
         } else if (response.status === 503) {
           errorMessage = errorData.error || "The chat service is temporarily unavailable. Please try again in a moment.";
+          if (errorData.details) {
+            errorMessage += ` (${errorData.details})`;
+          }
+        } else if (response.status === 500) {
+          // Show more details for 500 errors
+          errorMessage = errorData.error || errorData.response || "Failed to process chat request. Please try again.";
+          if (errorData.details && !errorMessage.includes(errorData.details)) {
+            errorMessage += ` Details: ${errorData.details}`;
+          }
         } else {
-          errorMessage = errorData.error || `Error: ${response.status} ${response.statusText}`;
+          errorMessage = errorData.error || errorData.response || `Error: ${response.status} ${response.statusText}`;
         }
+        
+        console.error('Chat API error:', {
+          status: response.status,
+          errorData,
+          errorMessage
+        });
         
         setMessages((prev) => [
           ...prev,
@@ -52,10 +79,41 @@ export default function Chatbot() {
       }
 
       const data = await response.json();
+      
+      // Log the full response for debugging
+      console.log('Chat API response:', data);
+      
+      // Extract the response text
+      let responseText = data.response || data.message || "I received your message but couldn't generate a response.";
+      
+      // Convert newlines to <br> tags for proper display
+      responseText = responseText.replace(/\n/g, '<br>');
+      
+      // If there's a separate calendar link field, append it to the response
+      if (data.calendarLink || data.eventLink || data.link) {
+        const link = data.calendarLink || data.eventLink || data.link;
+        if (link && !responseText.includes(link)) {
+          responseText += `<br><br><a href="${link}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">📅 View Calendar Event</a>`;
+        }
+      }
+      
+      // Convert plain text URLs to HTML links (only if not already in HTML format)
+      // Check if response already contains HTML links
+      const hasHtmlLinks = /<a\s+[^>]*href/i.test(responseText);
+      
+      if (!hasHtmlLinks) {
+        // Simple regex to match URLs that aren't already in HTML
+        const urlRegex = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/gi;
+        responseText = responseText.replace(urlRegex, (url) => {
+          // Add https:// if it's a www link
+          const fullUrl = url.startsWith('http') ? url : `https://${url}`;
+          return `<a href="${fullUrl}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">${url}</a>`;
+        });
+      }
 
       setMessages((prev) => [
         ...prev,
-        { role: "bot", text: data.response || data.message || "I received your message but couldn't generate a response." },
+        { role: "bot", text: responseText },
       ]);
     } catch (error) {
       console.error('Chat error:', error);
@@ -118,7 +176,13 @@ export default function Chatbot() {
                 }`}
               >
                 {msg.role === "bot" ? (
-                  <span dangerouslySetInnerHTML={{ __html: msg.text }} />
+                  <div 
+                    className="prose prose-sm max-w-none"
+                    style={{
+                      wordBreak: 'break-word',
+                    }}
+                    dangerouslySetInnerHTML={{ __html: msg.text }} 
+                  />
                 ) : (
                   msg.text
                 )}

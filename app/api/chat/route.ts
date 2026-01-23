@@ -1,16 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Helper to create timeout signal (compatible with older Node versions)
+function createTimeoutSignal(timeoutMs: number): AbortSignal {
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), timeoutMs);
+  return controller.signal;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     
     // Get backend URL from environment variable, with fallback
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_CHATBOT_API_URL || 'https://portfolio-ai-icll.onrender.com';
+    // Try both NEXT_PUBLIC_* (client-accessible) and regular env vars
+    const backendUrl = 
+      process.env.NEXT_PUBLIC_API_URL || 
+      process.env.NEXT_PUBLIC_CHATBOT_API_URL || 
+      process.env.CHATBOT_API_URL ||
+      process.env.API_URL ||
+      'https://portfolio-ai-icll.onrender.com';
     
     // The Flask backend endpoint is /chat (not /api/chat)
-    const apiUrl = `${backendUrl}/chat`;
+    const apiUrl = `${backendUrl.replace(/\/$/, '')}/chat`;
     
     console.log('Calling backend API:', apiUrl);
+    console.log('Environment check - NEXT_PUBLIC_API_URL:', process.env.NEXT_PUBLIC_API_URL);
+    console.log('Environment check - NEXT_PUBLIC_CHATBOT_API_URL:', process.env.NEXT_PUBLIC_CHATBOT_API_URL);
+    
+    // Create timeout signal (compatible approach)
+    const timeoutSignal = createTimeoutSignal(30000); // 30 second timeout
     
     const response = await fetch(apiUrl, {
       method: 'POST',
@@ -18,14 +36,15 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-      // Add timeout to prevent hanging
-      signal: AbortSignal.timeout(30000), // 30 second timeout
+      signal: timeoutSignal,
     });
 
     console.log('Backend response status:', response.status);
 
     if (response.ok) {
       const data = await response.json();
+      // Log the response data for debugging calendar link issues
+      console.log('Backend response data:', JSON.stringify(data, null, 2));
       return NextResponse.json(data, { status: 200 });
     }
     
@@ -43,7 +62,7 @@ export async function POST(request: NextRequest) {
     if (response.status === 404) {
       return NextResponse.json(
         { 
-          error: `API endpoint not found (404). Backend URL: ${apiUrl}`,
+          error: `API endpoint not found (404). Backend URL: ${apiUrl}. Please check your environment variables.`,
           status: response.status,
         },
         { status: 404 }
@@ -56,11 +75,22 @@ export async function POST(request: NextRequest) {
     console.error('Chat API error:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     
-    // Check if it's a timeout or connection error
-    if (errorMessage.includes('timeout') || errorMessage.includes('fetch')) {
+    // Check if it's an abort (timeout) error
+    if (error instanceof Error && error.name === 'AbortError') {
       return NextResponse.json(
         { 
           error: 'The chat service is currently unavailable. The server might be starting up (Render free tier apps sleep after inactivity). Please try again in a moment.',
+          details: 'Request timeout after 30 seconds'
+        },
+        { status: 503 }
+      );
+    }
+    
+    // Check if it's a network/connection error
+    if (errorMessage.includes('fetch') || errorMessage.includes('ECONNREFUSED') || errorMessage.includes('ENOTFOUND')) {
+      return NextResponse.json(
+        { 
+          error: 'Unable to connect to the chat service. Please check that the backend server is running and the URL is correct.',
           details: errorMessage
         },
         { status: 503 }
@@ -70,7 +100,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         error: 'Failed to process chat request',
-        details: errorMessage
+        details: errorMessage,
+        response: errorMessage
       },
       { status: 500 }
     );
