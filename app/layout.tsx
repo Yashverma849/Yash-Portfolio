@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import LoadingScreen from '@/components/LoadingScreen'
+import EnsureHeroOnLoad from '@/components/EnsureHeroOnLoad'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -39,6 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{history.scrollRestoration='manual';window.scrollTo(0,0);}catch(e){}})();`,
+          }}
+        />
+        <EnsureHeroOnLoad />
         <LoadingScreen />
         <Navbar />
         {children}

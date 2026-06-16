@@ -1,16 +1,16 @@
-# Graph Report - Yash-Portfolio  (2026-06-15)
+# Graph Report - Yash-Portfolio  (2026-06-17)
 
 ## Corpus Check
-- 95 files · ~26,105 words
+- 98 files · ~26,580 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 566 nodes · 781 edges · 47 communities (42 shown, 5 thin omitted)
+- 576 nodes · 804 edges · 47 communities (42 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `edc518b3`
+- Built from commit: `b726b978`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,10 +59,10 @@
 1. `cn()` - 88 edges
 2. `compilerOptions` - 16 edges
 3. `/generate — Portfolio Landing Page Generator` - 15 edges
-4. `ContentGrid` - 8 edges
-5. `Section` - 8 edges
-6. `Button` - 8 edges
-7. `prefersReducedMotion()` - 8 edges
+4. `prefersReducedMotion()` - 11 edges
+5. `ContentGrid` - 8 edges
+6. `Section` - 8 edges
+7. `Button` - 8 edges
 8. `Yash Verma - Portfolio Website` - 8 edges
 9. `scripts` - 7 edges
 10. `Container()` - 7 edges
@@ -93,8 +93,8 @@ Cohesion: 0.05
 Nodes (38): useIsMobile(), Input, Separator, SheetContent, SheetContentProps, SheetDescription, SheetFooter(), SheetHeader() (+30 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.07
-Nodes (33): About(), playfair, socialLinks, achievementItems, Achievements(), socialLinks, Footer(), Hero() (+25 more)
+Cohesion: 0.06
+Nodes (36): About(), fadeIn, playfair, socialLinks, achievementItems, Achievements(), socialLinks, Footer() (+28 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.11
@@ -102,7 +102,7 @@ Nodes (24): Contact(), Action, ActionType, addToRemoveQueue(), dispatch(), genId
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
-Nodes (14): Button, Carousel, CarouselApi, CarouselContent, CarouselContext, CarouselContextProps, CarouselItem, CarouselNext (+6 more)
+Nodes (15): Button, ButtonProps, Carousel, CarouselApi, CarouselContent, CarouselContext, CarouselContextProps, CarouselItem (+7 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.12
@@ -114,7 +114,7 @@ Nodes (22): Before Writing Code, Content Conventions, Core state, Decision: Sect
 
 ### Community 7 - "Community 7"
 Cohesion: 0.10
-Nodes (11): AccordionContent, AccordionItem, AccordionTrigger, Checkbox, HoverCardContent, PopoverContent, Progress, ScrollArea (+3 more)
+Nodes (12): Checkbox, HoverCardContent, InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot, PopoverContent, Progress (+4 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.10
@@ -133,8 +133,8 @@ Cohesion: 0.14
 Nodes (11): FormControl, FormDescription, FormFieldContext, FormFieldContextValue, FormItem, FormItemContext, FormItemContextValue, FormLabel (+3 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.19
-Nodes (15): cn(), ButtonProps, buttonVariants, Calendar(), CalendarProps, Pagination(), PaginationContent, PaginationEllipsis() (+7 more)
+Cohesion: 0.20
+Nodes (14): cn(), buttonVariants, Calendar(), CalendarProps, Pagination(), PaginationContent, PaginationEllipsis(), PaginationItem (+6 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.17
@@ -189,16 +189,16 @@ Cohesion: 0.40
 Nodes (4): Alert, AlertDescription, AlertTitle, alertVariants
 
 ### Community 26 - "Community 26"
-Cohesion: 0.40
-Nodes (4): InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot
+Cohesion: 0.50
+Nodes (3): AccordionContent, AccordionItem, AccordionTrigger
 
 ### Community 27 - "Community 27"
 Cohesion: 0.20
 Nodes (9): ContextMenuCheckboxItem, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuRadioItem, ContextMenuSeparator, ContextMenuShortcut(), ContextMenuSubContent (+1 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.18
-Nodes (8): inter, metadata, LoadingScreen(), NAV_ITEMS, Navbar(), SECTION_IDS, YVLogoStroke, YVLogoStrokeProps
+Cohesion: 0.16
+Nodes (11): inter, metadata, EnsureHeroOnLoad(), LoadingScreen(), NAV_ITEMS, Navbar(), SECTION_IDS, YVLogoStroke (+3 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.25
@@ -221,7 +221,7 @@ Cohesion: 0.33
 Nodes (5): ToggleGroup, ToggleGroupContext, ToggleGroupItem, Toggle, toggleVariants
 
 ## Knowledge Gaps
-- **346 isolated node(s):** `extends`, `ignorePatterns`, `inter`, `metadata`, `$schema` (+341 more)
+- **348 isolated node(s):** `extends`, `ignorePatterns`, `inter`, `metadata`, `$schema` (+343 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -229,16 +229,16 @@ Nodes (5): ToggleGroup, ToggleGroupContext, ToggleGroupItem, Toggle, toggleVaria
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `cn()` connect `Community 12` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 7`, `Community 10`, `Community 11`, `Community 13`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 21`, `Community 22`, `Community 23`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 33`, `Community 45`, `Community 47`?**
-  _High betweenness centrality (0.244) - this node is a cross-community bridge._
+  _High betweenness centrality (0.245) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `Community 0` to `Community 20`?**
   _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `Container()` connect `Community 2` to `Community 12`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **What connects `extends`, `ignorePatterns`, `inter` to the rest of the system?**
-  _346 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _348 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03773584905660377 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.04927536231884058 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06918238993710692 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06370543541788427 - nodes in this community are weakly interconnected._

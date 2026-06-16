@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import YVLogoStroke from '@/components/YVLogoStroke';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { resetHeroUrl, scrollToHero } from '@/lib/scroll-to-hero';
 
 export default function LoadingScreen() {
   const [hidden, setHidden] = useState(false);
@@ -14,10 +15,19 @@ export default function LoadingScreen() {
     const path = pathRef.current;
 
     document.body.style.overflow = 'hidden';
+    scrollToHero();
+    resetHeroUrl();
+
+    const finishLoading = () => {
+      document.body.style.overflow = '';
+      scrollToHero();
+      resetHeroUrl();
+      window.dispatchEvent(new CustomEvent('loading-screen:complete'));
+      setHidden(true);
+    };
 
     if (prefersReducedMotion() || !overlay || !path) {
-      document.body.style.overflow = '';
-      setHidden(true);
+      finishLoading();
       return;
     }
 
@@ -29,10 +39,7 @@ export default function LoadingScreen() {
     });
 
     const tl = gsap.timeline({
-      onComplete: () => {
-        document.body.style.overflow = '';
-        setHidden(true);
-      },
+      onComplete: finishLoading,
     });
 
     tl.to(path, {

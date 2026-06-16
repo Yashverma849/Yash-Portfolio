@@ -11,6 +11,7 @@ const projects = [
     description:
       'AI-powered learning management platform that revolutionizes online education with intelligent course recommendations and personalized learning paths.',
     image: '/assets/flowschool.png',
+    imageClassName: 'object-cover object-center',
     link: 'https://flowcourses.vercel.app/',
     tags: ['Next.js', 'Supabase', 'Education', 'Youtube Embedding'],
   },
@@ -19,6 +20,7 @@ const projects = [
     description:
       'AI-powered expense tracking system with automated categorization and financial insights using Gemini AI integration.',
     image: '/assets/expensiq.png',
+    imageClassName: 'object-cover object-top scale-[1.12]',
     link: 'https://finbot-expense-tracker.vercel.app/',
     tags: ['Gemini AI', 'Fintech', 'SaaS'],
   },
@@ -27,6 +29,7 @@ const projects = [
     description:
       'Comprehensive interview preparation platform with coding challenges, technical questions, and mock interviews.',
     image: '/assets/codeinquiryhub.png',
+    imageClassName: 'object-cover object-top scale-[1.12]',
     link: 'https://codeinquiryhub.web.app/',
     tags: ['React', 'Firebase', 'Education'],
   },
@@ -55,32 +58,17 @@ const Projects = () => {
       });
 
       gsap.from(cards, {
-        y: 120,
+        y: 48,
         opacity: 0,
-        stagger: 0.2,
+        stagger: 0.15,
+        duration: 0.8,
         ease: 'power3.out',
+        clearProps: 'transform',
         scrollTrigger: {
           trigger: gridRef.current,
           start: 'top 85%',
-          end: 'top 35%',
-          scrub: 1,
+          toggleActions: 'play none none none',
         },
-      });
-
-      cards.forEach((card) => {
-        const image = card.querySelector<HTMLElement>('.project-card-image');
-        if (!image) return;
-
-        gsap.to(image, {
-          yPercent: -18,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
       });
     }, sectionRef);
 
@@ -106,7 +94,7 @@ const Projects = () => {
 
           <div
             ref={gridRef}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10"
           >
             {projects.map((project) => (
               <a
@@ -114,40 +102,42 @@ const Projects = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="project-card group relative block aspect-[16/10] overflow-hidden rounded-xl sm:rounded-2xl shadow-soft transition-shadow duration-300 hover:shadow-hover will-change-transform"
+                className="project-card group relative block w-full min-w-0 max-w-full aspect-[3/2] overflow-hidden rounded-xl bg-foreground shadow-soft transition-shadow duration-300 hover:shadow-hover sm:rounded-2xl"
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="project-card-image object-cover object-center will-change-transform transition-transform duration-500 group-hover:scale-105"
-                />
+                <div className="absolute inset-0 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className={`project-card-image transition-transform duration-500 group-hover:scale-105 ${project.imageClassName}`}
+                  />
+                </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
 
-                <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-3 p-4 transition-opacity duration-300 sm:p-5 sm:group-hover:opacity-0">
-                  <h3 className="text-lg font-bold text-primary-foreground sm:text-xl md:text-2xl">
+                <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-2 p-4 transition-opacity duration-300 sm:p-5 group-hover:opacity-0">
+                  <h3 className="line-clamp-2 text-base font-bold text-primary-foreground sm:text-lg md:text-xl">
                     {project.title}
                   </h3>
                   <ExternalLink className="h-4 w-4 flex-shrink-0 text-primary-foreground/80 sm:h-5 sm:w-5" />
                 </div>
 
-                <div className="absolute inset-0 z-20 hidden flex-col justify-end bg-foreground/90 p-6 opacity-0 transition-all duration-300 translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 sm:flex">
-                  <div className="mb-3 flex items-start justify-between gap-3">
-                    <h3 className="text-lg font-bold text-primary-foreground sm:text-xl md:text-2xl">
+                <div className="absolute inset-0 z-20 flex min-h-0 flex-col justify-center gap-3 overflow-hidden bg-gradient-to-br from-background/25 via-secondary/20 to-accent/10 p-5 opacity-0 backdrop-blur-md transition-all duration-300 translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 sm:gap-4 sm:p-6">
+                  <div className="flex shrink-0 items-start justify-between gap-2">
+                    <h3 className="line-clamp-2 text-base font-bold leading-snug text-white drop-shadow-md sm:text-lg">
                       {project.title}
                     </h3>
-                    <ExternalLink className="h-4 w-4 flex-shrink-0 text-accent sm:h-5 sm:w-5" />
+                    <ExternalLink className="h-4 w-4 flex-shrink-0 text-white/90 drop-shadow-md sm:h-5 sm:w-5" />
                   </div>
-                  <p className="text-sm leading-relaxed text-primary-foreground/85 sm:text-base">
+                  <p className="line-clamp-5 text-xs leading-relaxed text-white/90 drop-shadow-md sm:line-clamp-6 sm:text-sm">
                     {project.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent sm:text-sm"
+                        className="inline-flex items-center rounded-full border border-cta/40 bg-cta/10 px-2.5 py-0.5 text-[10px] font-medium leading-tight text-cta sm:px-3 sm:py-1 sm:text-xs"
                       >
                         {tag}
                       </span>

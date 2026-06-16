@@ -2,7 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import {
   Carousel,
@@ -10,6 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 export interface Gallery4Item {
@@ -44,6 +45,75 @@ export function Gallery4({
 }: Gallery4Props) {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const pausedRef = useRef(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (prefersReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray<HTMLElement>(".achievement-card", carouselRef.current);
+      const images = gsap.utils.toArray<HTMLElement>(".achievement-card-image", carouselRef.current);
+
+      gsap.from(titleRef.current, {
+        y: 40,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: 1,
+        },
+      });
+
+      if (descRef.current) {
+        gsap.from(descRef.current, {
+          y: 28,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 78%",
+            end: "top 58%",
+            scrub: 1,
+          },
+        });
+      }
+
+      gsap.from(cards, {
+        y: 56,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: "power3.out",
+        clearProps: "transform",
+        scrollTrigger: {
+          trigger: carouselRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      images.forEach((image) => {
+        const card = image.closest(".achievement-card");
+        if (!card) return;
+
+        gsap.to(image, {
+          yPercent: -14,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     if (!carouselApi || !autoPlay) return;
@@ -62,6 +132,7 @@ export function Gallery4({
 
   return (
     <section
+      ref={sectionRef}
       className={cn(
         "relative w-full overflow-x-clip py-12 sm:py-16 md:py-24 lg:py-32",
         className,
@@ -77,11 +148,14 @@ export function Gallery4({
           )}
         >
           <div className={cn("flex flex-col gap-3 sm:gap-4", centered && "items-center")}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            <h2 ref={titleRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold will-change-transform">
               {title}
             </h2>
             {description && (
-              <p className="max-w-lg text-sm sm:text-base md:text-lg text-muted-foreground">
+              <p
+                ref={descRef}
+                className="max-w-lg text-sm sm:text-base md:text-lg text-muted-foreground will-change-transform"
+              >
                 {description}
               </p>
             )}
@@ -90,6 +164,7 @@ export function Gallery4({
       </div>
 
       <div
+        ref={carouselRef}
         className="w-full overflow-hidden"
         onMouseEnter={() => {
           pausedRef.current = true;
@@ -119,13 +194,13 @@ export function Gallery4({
                   className="group block h-full"
                   {...(item.href === "#" ? { onClick: (e) => e.preventDefault() } : {})}
                 >
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl shadow-soft transition-shadow duration-300 group-hover:shadow-hover">
+                  <div className="achievement-card relative aspect-[4/5] w-full overflow-hidden rounded-xl shadow-soft transition-shadow duration-300 group-hover:shadow-hover will-change-transform">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-center"
+                      className="achievement-card-image object-cover object-center transition-transform duration-500 ease-out will-change-transform group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 flex h-[52%] flex-col justify-end p-6 text-primary-foreground md:p-7">

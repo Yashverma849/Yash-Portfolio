@@ -117,7 +117,7 @@
       "label": "inter",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "app_layout_inter",
       "community": 28,
@@ -127,7 +127,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "app_layout_metadata",
       "community": 28,
@@ -137,7 +137,7 @@
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "app/layout.tsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "app_layout_rootlayout",
       "community": 28,
@@ -1287,7 +1287,7 @@
       "label": "playfair",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "components_about_playfair",
       "community": 2,
@@ -1297,17 +1297,27 @@
       "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "components_about_sociallinks",
       "community": 2,
       "norm_label": "sociallinks"
     },
     {
+      "label": "fadeIn",
+      "file_type": "code",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "components_about_fadein",
+      "community": 2,
+      "norm_label": "fadein"
+    },
+    {
       "label": "About()",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L35",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "components_about_about",
       "community": 2,
@@ -1374,6 +1384,26 @@
       "norm_label": "contact()"
     },
     {
+      "label": "EnsureHeroOnLoad.tsx",
+      "file_type": "code",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_ensureheroonload",
+      "community": 28,
+      "norm_label": "ensureheroonload.tsx"
+    },
+    {
+      "label": "EnsureHeroOnLoad()",
+      "file_type": "code",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_ensureheroonload_ensureheroonload",
+      "community": 28,
+      "norm_label": "ensureheroonload()"
+    },
+    {
       "label": "Footer.tsx",
       "file_type": "code",
       "source_file": "src/components/Footer.tsx",
@@ -1404,20 +1434,30 @@
       "norm_label": "hero.tsx"
     },
     {
-      "label": "HeroProfileClip()",
+      "label": "HeroTypingHello()",
       "file_type": "code",
       "source_file": "src/components/Hero.tsx",
-      "source_location": "L13",
+      "source_location": "L11",
       "_origin": "ast",
-      "id": "components_hero_heroprofileclip",
+      "id": "components_hero_herotypinghello",
       "community": 2,
-      "norm_label": "heroprofileclip()"
+      "norm_label": "herotypinghello()"
+    },
+    {
+      "label": "HeroBackgroundVideo()",
+      "file_type": "code",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "components_hero_herobackgroundvideo",
+      "community": 2,
+      "norm_label": "herobackgroundvideo()"
     },
     {
       "label": "Hero()",
       "file_type": "code",
       "source_file": "src/components/Hero.tsx",
-      "source_location": "L80",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "components_hero_hero",
       "community": 2,
@@ -1437,7 +1477,7 @@
       "label": "LoadingScreen()",
       "file_type": "code",
       "source_file": "src/components/LoadingScreen.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_loadingscreen_loadingscreen",
       "community": 28,
@@ -1950,7 +1990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_accordion",
-      "community": 7,
+      "community": 26,
       "norm_label": "accordion.tsx"
     },
     {
@@ -1960,7 +2000,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ui_accordion_accordionitem",
-      "community": 7,
+      "community": 26,
       "norm_label": "accordionitem"
     },
     {
@@ -1970,7 +2010,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "ui_accordion_accordiontrigger",
-      "community": 7,
+      "community": 26,
       "norm_label": "accordiontrigger"
     },
     {
@@ -1980,7 +2020,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "ui_accordion_accordioncontent",
-      "community": 7,
+      "community": 26,
       "norm_label": "accordioncontent"
     },
     {
@@ -2300,7 +2340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_button",
-      "community": 12,
+      "community": 4,
       "norm_label": "button.tsx"
     },
     {
@@ -2320,7 +2360,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "ui_button_buttonprops",
-      "community": 12,
+      "community": 4,
       "norm_label": "buttonprops"
     },
     {
@@ -2914,6 +2954,36 @@
       "norm_label": "contextmenushortcut()"
     },
     {
+      "label": "count-up-stat.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_count_up_stat",
+      "community": 2,
+      "norm_label": "count-up-stat.tsx"
+    },
+    {
+      "label": "CountUpStatProps",
+      "file_type": "code",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "ui_count_up_stat_countupstatprops",
+      "community": 2,
+      "norm_label": "countupstatprops"
+    },
+    {
+      "label": "CountUpStat()",
+      "file_type": "code",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "ui_count_up_stat_countupstat",
+      "community": 2,
+      "norm_label": "countupstat()"
+    },
+    {
       "label": "dialog.tsx",
       "file_type": "code",
       "source_file": "src/components/ui/dialog.tsx",
@@ -3297,7 +3367,7 @@
       "label": "Gallery4Item",
       "file_type": "code",
       "source_file": "src/components/ui/gallery4.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4item",
       "community": 2,
@@ -3307,7 +3377,7 @@
       "label": "Gallery4Props",
       "file_type": "code",
       "source_file": "src/components/ui/gallery4.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4props",
       "community": 4,
@@ -3317,7 +3387,7 @@
       "label": "Gallery4()",
       "file_type": "code",
       "source_file": "src/components/ui/gallery4.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4",
       "community": 2,
@@ -3350,7 +3420,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_input_otp",
-      "community": 26,
+      "community": 7,
       "norm_label": "input-otp.tsx"
     },
     {
@@ -3360,7 +3430,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_input_otp_inputotp",
-      "community": 26,
+      "community": 7,
       "norm_label": "inputotp"
     },
     {
@@ -3370,7 +3440,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpgroup",
-      "community": 26,
+      "community": 7,
       "norm_label": "inputotpgroup"
     },
     {
@@ -3380,7 +3450,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpslot",
-      "community": 26,
+      "community": 7,
       "norm_label": "inputotpslot"
     },
     {
@@ -3390,7 +3460,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "ui_input_otp_inputotpseparator",
-      "community": 26,
+      "community": 7,
       "norm_label": "inputotpseparator"
     },
     {
@@ -3820,7 +3890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_radio_group",
-      "community": 45,
+      "community": 7,
       "norm_label": "radio-group.tsx"
     },
     {
@@ -3830,7 +3900,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_radio_group_radiogroup",
-      "community": 45,
+      "community": 7,
       "norm_label": "radiogroup"
     },
     {
@@ -3840,7 +3910,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_radio_group_radiogroupitem",
-      "community": 45,
+      "community": 7,
       "norm_label": "radiogroupitem"
     },
     {
@@ -3880,7 +3950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_scroll_area",
-      "community": 7,
+      "community": 45,
       "norm_label": "scroll-area.tsx"
     },
     {
@@ -3890,7 +3960,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_scroll_area_scrollarea",
-      "community": 7,
+      "community": 45,
       "norm_label": "scrollarea"
     },
     {
@@ -3900,7 +3970,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_scroll_area_scrollbar",
-      "community": 7,
+      "community": 45,
       "norm_label": "scrollbar"
     },
     {
@@ -5094,6 +5164,36 @@
       "norm_label": "prefersreducedmotion()"
     },
     {
+      "label": "scroll-to-hero.ts",
+      "file_type": "code",
+      "source_file": "src/lib/scroll-to-hero.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_scroll_to_hero",
+      "community": 28,
+      "norm_label": "scroll-to-hero.ts"
+    },
+    {
+      "label": "scrollToHero()",
+      "file_type": "code",
+      "source_file": "src/lib/scroll-to-hero.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "lib_scroll_to_hero_scrolltohero",
+      "community": 28,
+      "norm_label": "scrolltohero()"
+    },
+    {
+      "label": "resetHeroUrl()",
+      "file_type": "code",
+      "source_file": "src/lib/scroll-to-hero.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "lib_scroll_to_hero_resetherourl",
+      "community": 28,
+      "norm_label": "resetherourl()"
+    },
+    {
       "label": "utils.ts",
       "file_type": "code",
       "source_file": "src/lib/utils.ts",
@@ -5765,6 +5865,28 @@
       "confidence_score": 1.0,
       "source": "app_layout",
       "target": "app_layout_rootlayout"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout",
+      "target": "components_ensureheroonload"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/layout.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_layout",
+      "target": "components_ensureheroonload_ensureheroonload"
     },
     {
       "relation": "imports_from",
@@ -7094,6 +7216,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/About.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "components_about_fadein"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7188,13 +7320,35 @@
       "target": "lib_gsap_prefersreducedmotion"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_count_up_stat"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_count_up_stat_countupstat"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "src/components/About.tsx",
       "source_location": "L14",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "components_about_about",
       "target": "lib_gsap_prefersreducedmotion"
     },
@@ -7408,6 +7562,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Contact.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_contact",
+      "target": "lib_gsap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Contact.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_contact",
+      "target": "lib_gsap_prefersreducedmotion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Contact.tsx",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7505,6 +7681,49 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ensureheroonload",
+      "target": "components_ensureheroonload_ensureheroonload"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ensureheroonload",
+      "target": "lib_scroll_to_hero"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ensureheroonload",
+      "target": "lib_scroll_to_hero_resetherourl"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/EnsureHeroOnLoad.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_ensureheroonload",
+      "target": "lib_scroll_to_hero_scrolltohero"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
       "source_location": "L3",
       "weight": 1.0,
@@ -7581,11 +7800,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Hero.tsx",
-      "source_location": "L12",
+      "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_hero",
-      "target": "components_hero_heroprofileclip"
+      "target": "components_hero_herobackgroundvideo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_hero",
+      "target": "components_hero_herotypinghello"
     },
     {
       "relation": "imports",
@@ -7638,9 +7867,9 @@
       "source_file": "src/components/Hero.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_hero",
-      "target": "ui_button",
-      "confidence_score": 1.0
+      "target": "ui_button"
     },
     {
       "relation": "imports",
@@ -7649,19 +7878,19 @@
       "source_file": "src/components/Hero.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_hero",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
       "source_file": "src/components/Hero.tsx",
-      "source_location": "L46",
+      "source_location": "L19",
       "weight": 1.0,
-      "source": "components_hero_heroprofileclip",
+      "confidence_score": 1.0,
+      "source": "components_hero_herotypinghello",
       "target": "lib_gsap_prefersreducedmotion"
     },
     {
@@ -7728,6 +7957,39 @@
       "confidence_score": 1.0,
       "source": "components_loadingscreen",
       "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_loadingscreen",
+      "target": "lib_scroll_to_hero"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_loadingscreen",
+      "target": "lib_scroll_to_hero_resetherourl"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_loadingscreen",
+      "target": "lib_scroll_to_hero_scrolltohero"
     },
     {
       "relation": "contains",
@@ -10135,6 +10397,48 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "lib_gsap"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "ui_count_up_stat_countupstat"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "ui_count_up_stat_countupstatprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/ui/dialog.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -10625,6 +10929,28 @@
       "confidence_score": 1.0,
       "source": "ui_form",
       "target": "ui_label_label"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/gallery4.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_gallery4",
+      "target": "lib_gsap"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/gallery4.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_gallery4",
+      "target": "lib_gsap_prefersreducedmotion"
     },
     {
       "relation": "imports_from",
@@ -13267,6 +13593,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/scroll-to-hero.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_scroll_to_hero",
+      "target": "lib_scroll_to_hero_resetherourl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/scroll-to-hero.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "lib_scroll_to_hero",
+      "target": "lib_scroll_to_hero_scrolltohero"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/lib/utils.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -13786,5 +14132,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "edc518b3febf66d3b028fb48415a77d6f8d42f85"
+  "built_at_commit": "b726b978ece4d2a307d1b50a3c09d272b86fc3fb"
 }

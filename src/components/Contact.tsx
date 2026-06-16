@@ -1,10 +1,10 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { Linkedin, Github, Mail } from 'lucide-react';
 import ResumeShowcase from '@/components/ResumeShowcase';
 import { SocialCard } from '@/components/ui/social-card';
+import { gsap, prefersReducedMotion } from '@/lib/gsap';
 
 const socialLinks = [
   {
@@ -33,52 +33,135 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const resumeParallaxRef = useRef<HTMLDivElement>(null);
+  const resumeRef = useRef<HTMLDivElement>(null);
+  const socialParallaxRef = useRef<HTMLDivElement>(null);
+  const socialRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (prefersReducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.from(titleRef.current, {
+        y: 40,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'top 60%',
+          scrub: 1,
+        },
+      });
+
+      gsap.from(descRef.current, {
+        y: 28,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 78%',
+          end: 'top 58%',
+          scrub: 1,
+        },
+      });
+
+      gsap.from(resumeRef.current, {
+        x: -48,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform',
+        scrollTrigger: {
+          trigger: resumeRef.current,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+
+      gsap.from(socialRef.current, {
+        x: 48,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        clearProps: 'transform',
+        scrollTrigger: {
+          trigger: socialRef.current,
+          start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      });
+
+      gsap.to(resumeParallaxRef.current, {
+        y: -28,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      gsap.to(socialParallaxRef.current, {
+        y: 28,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section id="contact" className="bg-background py-12 sm:py-16 md:py-24 lg:py-32">
+    <section id="contact" ref={sectionRef} className="bg-background py-12 sm:py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8 sm:space-y-12"
-        >
+        <div className="space-y-8 sm:space-y-12">
           <div className="space-y-3 text-center sm:space-y-4">
-            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">Get In Touch</h2>
-            <p className="mx-auto max-w-2xl px-4 text-sm text-muted-foreground sm:text-base md:text-lg">
+            <h2
+              ref={titleRef}
+              className="text-3xl font-bold will-change-transform sm:text-4xl md:text-5xl lg:text-6xl"
+            >
+              Get In Touch
+            </h2>
+            <p
+              ref={descRef}
+              className="mx-auto max-w-2xl px-4 text-sm text-muted-foreground will-change-transform sm:text-base md:text-lg"
+            >
               Have a project in mind or want to collaborate? Feel free to reach out!
             </p>
           </div>
 
           <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 sm:gap-12 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <ResumeShowcase />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col items-center gap-6 sm:gap-8"
-            >
-              <div className="space-y-2 text-center sm:space-y-3">
-                <h3 className="text-xl font-bold sm:text-2xl">Connect With Me</h3>
-                <p className="mx-auto max-w-xs text-sm text-muted-foreground sm:text-base">
-                  Hover to connect on social media or drop me an email.
-                </p>
+            <div ref={resumeParallaxRef} className="will-change-transform">
+              <div ref={resumeRef}>
+                <ResumeShowcase />
               </div>
+            </div>
 
-              <SocialCard title="Socials" socialLinks={socialLinks} />
-            </motion.div>
+            <div ref={socialParallaxRef} className="will-change-transform">
+              <div
+                ref={socialRef}
+                className="flex flex-col items-center gap-6 sm:gap-8"
+              >
+                <div className="space-y-2 text-center sm:space-y-3">
+                  <h3 className="text-xl font-bold sm:text-2xl">Connect With Me</h3>
+                  <p className="mx-auto max-w-xs text-sm text-muted-foreground sm:text-base">
+                    Hover to connect on social media or drop me an email.
+                  </p>
+                </div>
+
+                <SocialCard title="Socials" socialLinks={socialLinks} />
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
