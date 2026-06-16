@@ -23,6 +23,7 @@ export interface Gallery4Item {
 }
 
 export interface Gallery4Props {
+  id?: string;
   title?: string;
   description?: string;
   items: Gallery4Item[];
@@ -34,6 +35,7 @@ export interface Gallery4Props {
 }
 
 export function Gallery4({
+  id,
   title = "Case Studies",
   description,
   items,
@@ -133,6 +135,7 @@ export function Gallery4({
   return (
     <section
       ref={sectionRef}
+      id={id}
       className={cn(
         "relative w-full overflow-x-clip py-12 sm:py-16 md:py-24 lg:py-32",
         className,

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, type Variants } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Playfair_Display } from 'next/font/google';
 import { CountUpStat } from '@/components/ui/count-up-stat';
@@ -34,12 +34,12 @@ const socialLinks = [
   },
 ];
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 32 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 

@@ -58,6 +58,7 @@ const achievementItems: Gallery4Item[] = [
 const Achievements = () => {
   return (
     <Gallery4
+      id="achievements"
       title="Achievements"
       description="Highlights from hackathons, internships, and AI product work."
       items={achievementItems}

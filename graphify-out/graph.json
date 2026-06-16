@@ -3387,7 +3387,7 @@
       "label": "Gallery4()",
       "file_type": "code",
       "source_file": "src/components/ui/gallery4.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4",
       "community": 2,
@@ -7564,9 +7564,9 @@
       "source_file": "src/components/Contact.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_contact",
-      "target": "lib_gsap",
-      "confidence_score": 1.0
+      "target": "lib_gsap"
     },
     {
       "relation": "imports",
@@ -7575,9 +7575,9 @@
       "source_file": "src/components/Contact.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_contact",
-      "target": "lib_gsap_prefersreducedmotion",
-      "confidence_score": 1.0
+      "target": "lib_gsap_prefersreducedmotion"
     },
     {
       "relation": "imports_from",
@@ -14132,5 +14132,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b726b978ece4d2a307d1b50a3c09d272b86fc3fb"
+  "built_at_commit": "7d3b28699c26ebb780227b8aa582afc6071f511f"
 }

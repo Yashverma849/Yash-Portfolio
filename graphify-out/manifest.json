@@ -60,13 +60,13 @@
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
-    "mtime": 1781634654.9349728,
-    "ast_hash": "ed866424fdd168778aea51466ad57742",
+    "mtime": 1781637136.0515327,
+    "ast_hash": "323fd398aedb4ed52ba1c5fb31e5e628",
     "semantic_hash": ""
   },
   "src/components/Achievements.tsx": {
-    "mtime": 1781632249.0813687,
-    "ast_hash": "43c93f3454cc87dccf8385a39f984b96",
+    "mtime": 1781637312.7936256,
+    "ast_hash": "d4209163e843c62652018af585173d78",
     "semantic_hash": ""
   },
   "src/components/Contact.tsx": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "src/components/ui/gallery4.tsx": {
-    "mtime": 1781636854.5635512,
-    "ast_hash": "ec20d17f1758f7c4871367e669bc388e",
+    "mtime": 1781637316.8146098,
+    "ast_hash": "fe20ba12fb512058909612b3d518b9e9",
     "semantic_hash": ""
   },
   "src/components/ui/social-card.tsx": {
