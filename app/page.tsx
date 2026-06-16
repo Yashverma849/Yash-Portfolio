@@ -1,6 +1,5 @@
 'use client'
 
-import PillNav from '@/components/PillNav'
 import Chatbot from '@/components/chatbot'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -14,27 +13,8 @@ import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiSupabase, SiOpenai
 import { Brain, CircuitBoard } from 'lucide-react'
 
 export default function Home() {
-  const navigationItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' }
-  ];
-
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <PillNav
-        logo="/assets/yv-logo.png"
-        logoAlt="YV Logo"
-        items={navigationItems}
-        activeHref="#home"
-        className="custom-nav"
-        ease="power2.easeOut"
-        baseColor="#000000"
-        pillColor="#ffffff"
-        pillTextColor="#000000"
-      />
       <Hero />
       <About />
       <Skills />

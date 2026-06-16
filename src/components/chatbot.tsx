@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MessageCircle, Send, Calendar } from "lucide-react";
 import Image from "next/image";
 
 export default function Chatbot() {
-  console.log('Chatbot component rendered');
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [messages, setMessages] = useState([
@@ -17,7 +16,6 @@ export default function Chatbot() {
   const connectCalendar = async () => {
     setIsConnecting(true);
     try {
-      // Redirect to the OAuth authorize endpoint
       window.location.href = '/api/oauth/authorize';
     } catch (error) {
       console.error('Calendar connection error:', error);
@@ -28,6 +26,13 @@ export default function Chatbot() {
       setIsConnecting(false);
     }
   };
+
+  useEffect(() => {
+    const openChat = () => setOpen(true);
+
+    window.addEventListener('hero:ask-anything', openChat);
+    return () => window.removeEventListener('hero:ask-anything', openChat);
+  }, []);
 
   const sendMessage = async () => {
     if (!input.trim()) return;

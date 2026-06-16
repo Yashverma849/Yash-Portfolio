@@ -74,7 +74,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection("contact")}
-              className="bg-foreground text-background hover:bg-accent hover:text-white"
+              variant="cta"
             >
               Contact
             </Button>
@@ -118,7 +118,8 @@ const Navigation = () => {
             </button>
             <Button
               onClick={() => scrollToSection("contact")}
-              className="w-full bg-foreground text-background hover:bg-accent hover:text-white"
+              variant="cta"
+              className="w-full"
             >
               Contact
             </Button>

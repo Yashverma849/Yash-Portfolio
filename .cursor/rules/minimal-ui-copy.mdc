@@ -1,0 +1,51 @@
+---
+description: Keep UI copy minimal — no extra descriptions on features, pages, or cards
+alwaysApply: true
+---
+
+# Minimal UI Copy
+
+This portfolio favors a clean, uncluttered layout. Do not add descriptive or explanatory text unless the user explicitly asks for it.
+
+## Do not add by default
+
+- Section subtitles under headings (e.g. "Technologies I work with", "Have a project in mind...")
+- Helper text under labels or cards (e.g. "Hover the card — stacked layers fan out...")
+- Secondary lines on cards (e.g. role tags, "Connect professionally", "View my code")
+- Feature blurbs, tooltips, or "Read more" / "Learn more" copy on visual components
+- Redundant descriptions in demos, galleries, timelines, or carousels when the title/icon already communicates intent
+
+## Prefer instead
+
+- Titles and labels only — short, scannable headings
+- Icons, imagery, and interaction over prose
+- One primary heading per section; skip the paragraph beneath it unless requested
+
+## When adding UI
+
+- If a component template includes `description`, `subtitle`, or helper props — omit them or leave them empty unless the user asks for copy
+- When refactoring sections, remove existing subtitles/helper text if they crowd the layout
+- Ask before adding marketing-style or explanatory paragraphs to pages, cards, or feature blocks
+
+## Examples
+
+```tsx
+// ❌ BAD — crowded
+<SectionHeader
+  title="Experience & Skills"
+  subtitle="Technologies I work with — click a node to explore"
+/>
+
+// ✅ GOOD
+<h2 className="text-3xl font-bold">Experience & Skills</h2>
+```
+
+```tsx
+// ❌ BAD
+<p className="text-muted-foreground">
+  Hover the card — stacked layers fan out. Tap a layer to open LinkedIn, GitHub, or email.
+</p>
+
+// ✅ GOOD — no helper paragraph; the card speaks for itself
+<SocialCard title="Socials" socialLinks={socialLinks} />
+```

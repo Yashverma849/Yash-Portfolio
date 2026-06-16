@@ -1,72 +1,71 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Award, Briefcase, Lightbulb } from "lucide-react";
+'use client';
 
-const achievements = [
+import { Gallery4, type Gallery4Item } from '@/components/ui/gallery4';
+
+const achievementItems: Gallery4Item[] = [
   {
-    icon: Award,
-    title: "Smart India Hackathon",
-    role: "Frontend Developer",
-    description: "Participated in Smart India Hackathon building innovative solutions for national-level challenges.",
+    id: 'smart-india-hackathon',
+    title: 'Smart India Hackathon',
+    label: 'Frontend Developer',
+    description:
+      'Participated in Smart India Hackathon building innovative solutions for national-level challenges alongside a collaborative engineering team.',
+    href: '#',
+    image:
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
-    icon: Briefcase,
-    title: "Finzarc Internship",
-    role: "Full Stack Developer",
-    description: "Built Expensiq with Gemini AI integration for automated expense tracking and financial insights.",
+    id: 'finzarc-internship',
+    title: 'Finzarc Internship',
+    label: 'Full Stack Developer',
+    description:
+      'Built Expensiq with Gemini AI integration for automated expense tracking and financial insights during a hands-on product internship.',
+    href: '#',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
   {
-    icon: Lightbulb,
-    title: "AI SaaS Prototypes",
-    role: "Product Developer",
-    description: "Created multiple AI-powered SaaS prototypes focusing on automation and intelligent solutions.",
+    id: 'ai-saas-prototypes',
+    title: 'AI SaaS Prototypes',
+    label: 'Product Developer',
+    description:
+      'Created multiple AI-powered SaaS prototypes focusing on automation and intelligent solutions that solve real-world business problems.',
+    href: '#',
+    image:
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+  },
+  {
+    id: 'ai-voice-calling-agent',
+    title: 'AI Voice Calling Agent',
+    label: 'Voice AI Engineer',
+    description:
+      'Built an AI-powered voice calling agent using Twilio SIP trunking, Sarvam AI STT and TTS, and an LLM for intelligent responses and call analysis — designed to scale and replace traditional call centers.',
+    href: '#',
+    image:
+      'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+  },
+  {
+    id: 'instagram-publishing-system',
+    title: 'Instagram Publishing System',
+    label: 'Automation Engineer',
+    description:
+      'Automated social media publishing for Instagram with yt-dlp reel downloads, FFmpeg cropping, and Gemini API for frame-dimension analysis, title extraction, and caption parsing.',
+    href: '#',
+    image:
+      'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
   },
 ];
 
 const Achievements = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section className="pt-2 sm:pt-3 md:pt-4 lg:pt-4 pb-12 sm:pb-16 md:pb-24 lg:pb-32 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8 sm:space-y-12"
-        >
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">Achievements</h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={achievement.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-soft hover:shadow-hover transition-all duration-300"
-              >
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 rounded-lg sm:rounded-xl flex items-center justify-center">
-                    <achievement.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-1">{achievement.title}</h3>
-                    <p className="text-xs sm:text-sm text-accent font-medium">{achievement.role}</p>
-                  </div>
-                  <p className="text-sm sm:text-base text-muted-foreground">{achievement.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
+    <Gallery4
+      title="Achievements"
+      description="Highlights from hackathons, internships, and AI product work."
+      items={achievementItems}
+      className="bg-secondary/30 !pt-8 sm:!pt-10 md:!pt-12"
+      centered
+      autoPlay
+      hideControls
+    />
   );
 };
 

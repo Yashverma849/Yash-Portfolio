@@ -1,0 +1,30 @@
+1. Initial knowledge graph
+Built graphify-out/ — 506 nodes, 614 edges across your portfolio code
+Uses AST-only extraction (no API key needed for code)
+2. Cursor integration
+.cursor/rules/graphify.mdc with alwaysApply: true — tells the agent to run graphify query / graphify path / graphify explain before Read/Grep/Glob
+3. Auto-update on every change (3 layers)
+Trigger	Mechanism
+File saves (you or editor)
+npm run graphify:watch — running in background now
+Cursor agent edits
+.cursor/hooks.json → debounced graphify update . after Write
+Git commits
+graphify hook install — post-commit/post-checkout rebuild
+4. npm scripts
+npm run graphify         # one-off rebuild
+npm run graphify:watch   # keep graph in sync while coding
+How Cursor uses it
+Instead of grepping/reading many files, the agent should run:
+
+graphify query "how does the contact form work?"
+graphify path "Contact" "Button"
+graphify explain "PillNav"
+Then read only the specific files it needs to edit.
+
+What you should do
+Restart Cursor so .cursor/hooks.json loads
+Keep npm run graphify:watch running alongside npm run dev (already started in background)
+Optional: commit graphify-out/ so the graph is shared and available immediately on clone
+Note on full semantic extraction
+graphify . failed without an API key because of docs/images. Code indexing works without a key. To include README/docs/images with LLM extraction, set GEMINI_API_KEY or GOOGLE_API_KEY and run graphify . --update.

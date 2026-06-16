@@ -1,11 +1,11 @@
 import React from 'react';
 
-const RESUME_URL = '/assets/Yash_Verma_Resume.pdf'; // Place your resume.pdf in public/assets/
+const RESUME_URL = '/assets/Yash_Verma_Resume.pdf';
 
 const ResumeShowcase: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-8">
-      <div className="w-full max-w-2xl h-[500px] border rounded-lg overflow-hidden mb-6 shadow-lg relative">
+    <div className="w-full">
+      <div className="w-full aspect-[3/4] sm:aspect-[4/5] max-h-[min(70vh,560px)] border rounded-lg overflow-hidden shadow-lg relative">
         <iframe
           src={RESUME_URL}
           title="Resume PDF"
