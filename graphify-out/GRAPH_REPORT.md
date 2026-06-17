@@ -1,16 +1,16 @@
 # Graph Report - Yash-Portfolio  (2026-06-17)
 
 ## Corpus Check
-- 98 files · ~26,590 words
+- 100 files · ~27,175 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 576 nodes · 804 edges · 47 communities (42 shown, 5 thin omitted)
+- 584 nodes · 826 edges · 46 communities (41 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7d3b2869`
+- Built from commit: `7e8ffe77`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -52,17 +52,16 @@
 - [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 44|Community 44]]
-- [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 47|Community 47]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `cn()` - 88 edges
+1. `cn()` - 92 edges
 2. `compilerOptions` - 16 edges
 3. `/generate — Portfolio Landing Page Generator` - 15 edges
-4. `prefersReducedMotion()` - 11 edges
-5. `ContentGrid` - 8 edges
-6. `Section` - 8 edges
-7. `Button` - 8 edges
+4. `prefersReducedMotion()` - 14 edges
+5. `Button` - 9 edges
+6. `ContentGrid` - 8 edges
+7. `Section` - 8 edges
 8. `Yash Verma - Portfolio Website` - 8 edges
 9. `scripts` - 7 edges
 10. `Container()` - 7 edges
@@ -82,7 +81,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (47 total, 5 thin omitted)
+## Communities (46 total, 5 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.04
@@ -93,20 +92,20 @@ Cohesion: 0.05
 Nodes (38): useIsMobile(), Input, Separator, SheetContent, SheetContentProps, SheetDescription, SheetFooter(), SheetHeader() (+30 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.06
-Nodes (36): About(), fadeIn, playfair, socialLinks, achievementItems, Achievements(), socialLinks, Footer() (+28 more)
+Cohesion: 0.07
+Nodes (30): achievementItems, Achievements(), Footer(), PillNavProps, projects, Skills(), skillsTimelineData, Container() (+22 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.11
-Nodes (24): Contact(), Action, ActionType, addToRemoveQueue(), dispatch(), genId(), listeners, memoryState (+16 more)
+Cohesion: 0.09
+Nodes (27): Contact(), socialLinks, ResumeShowcase(), Action, ActionType, addToRemoveQueue(), dispatch(), genId() (+19 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
-Nodes (15): Button, ButtonProps, Carousel, CarouselApi, CarouselContent, CarouselContext, CarouselContextProps, CarouselItem (+7 more)
+Cohesion: 0.08
+Nodes (30): About(), aboutTypingBlocks, fadeIn, playfair, socialLinks, Hero(), HeroTypingHello(), prefersReducedMotion() (+22 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.12
-Nodes (17): devDependencies, autoprefixer, eslint, eslint-config-next, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals (+9 more)
+Cohesion: 0.07
+Nodes (27): devDependencies, autoprefixer, eslint, eslint-config-next, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals (+19 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.09
@@ -165,8 +164,8 @@ Cohesion: 0.32
 Nodes (6): main(), path, ROOT, scheduleUpdate(), shouldUpdate(), { spawn }
 
 ### Community 20 - "Community 20"
-Cohesion: 0.18
-Nodes (10): name, private, scripts, build, dev, graphify, graphify:watch, lint (+2 more)
+Cohesion: 0.50
+Nodes (3): AccordionContent, AccordionItem, AccordionTrigger
 
 ### Community 21 - "Community 21"
 Cohesion: 0.25
@@ -177,8 +176,8 @@ Cohesion: 0.25
 Nodes (7): SelectContent, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger
 
 ### Community 23 - "Community 23"
-Cohesion: 0.14
-Nodes (16): Skills(), skillsTimelineData, Badge(), BadgeProps, badgeVariants, Card, CardContent, CardDescription (+8 more)
+Cohesion: 0.23
+Nodes (10): Badge(), BadgeProps, badgeVariants, Card, CardContent, CardDescription, CardFooter, CardHeader (+2 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.22
@@ -187,10 +186,6 @@ Nodes (8): AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialog
 ### Community 25 - "Community 25"
 Cohesion: 0.40
 Nodes (4): Alert, AlertDescription, AlertTitle, alertVariants
-
-### Community 26 - "Community 26"
-Cohesion: 0.50
-Nodes (3): AccordionContent, AccordionItem, AccordionTrigger
 
 ### Community 27 - "Community 27"
 Cohesion: 0.20
@@ -221,24 +216,24 @@ Cohesion: 0.33
 Nodes (5): ToggleGroup, ToggleGroupContext, ToggleGroupItem, Toggle, toggleVariants
 
 ## Knowledge Gaps
-- **348 isolated node(s):** `extends`, `ignorePatterns`, `inter`, `metadata`, `$schema` (+343 more)
+- **352 isolated node(s):** `extends`, `ignorePatterns`, `inter`, `metadata`, `$schema` (+347 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 12` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 7`, `Community 10`, `Community 11`, `Community 13`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 21`, `Community 22`, `Community 23`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 33`, `Community 45`, `Community 47`?**
-  _High betweenness centrality (0.245) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Community 0` to `Community 20`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Container()` connect `Community 2` to `Community 12`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 12` to `Community 1`, `Community 2`, `Community 3`, `Community 4`, `Community 7`, `Community 10`, `Community 11`, `Community 13`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 20`, `Community 21`, `Community 22`, `Community 23`, `Community 24`, `Community 25`, `Community 26`, `Community 27`, `Community 28`, `Community 29`, `Community 30`, `Community 33`, `Community 47`?**
+  _High betweenness centrality (0.247) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 0` to `Community 5`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `Container()` connect `Community 2` to `Community 4`, `Community 12`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `extends`, `ignorePatterns`, `inter` to the rest of the system?**
-  _348 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _352 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03773584905660377 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.04927536231884058 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06370543541788427 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06648936170212766 - nodes in this community are weakly interconnected._

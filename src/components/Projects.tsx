@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { ProjectCardSparkles } from '@/components/ui/project-card-sparkles';
 
 const projects = [
   {
@@ -115,6 +116,8 @@ const Projects = () => {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/25 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+
+                <ProjectCardSparkles />
 
                 <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-2 p-4 transition-opacity duration-300 sm:p-5 group-hover:opacity-0">
                   <h3 className="line-clamp-2 text-base font-bold text-primary-foreground sm:text-lg md:text-xl">

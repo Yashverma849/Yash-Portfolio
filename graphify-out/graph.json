@@ -380,7 +380,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 20,
+      "community": 5,
       "norm_label": "package.json"
     },
     {
@@ -390,7 +390,7 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 20,
+      "community": 5,
       "norm_label": "name"
     },
     {
@@ -400,7 +400,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_private",
-      "community": 20,
+      "community": 5,
       "norm_label": "private"
     },
     {
@@ -410,7 +410,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_version",
-      "community": 20,
+      "community": 5,
       "norm_label": "version"
     },
     {
@@ -420,7 +420,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 20,
+      "community": 5,
       "norm_label": "scripts"
     },
     {
@@ -430,7 +430,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 20,
+      "community": 5,
       "norm_label": "dev"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 20,
+      "community": 5,
       "norm_label": "build"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_start",
-      "community": 20,
+      "community": 5,
       "norm_label": "start"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 20,
+      "community": 5,
       "norm_label": "lint"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_graphify",
-      "community": 20,
+      "community": 5,
       "norm_label": "graphify"
     },
     {
@@ -480,7 +480,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_scripts_graphify_watch",
-      "community": 20,
+      "community": 5,
       "norm_label": "graphify:watch"
     },
     {
@@ -1280,47 +1280,57 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_about",
-      "community": 2,
+      "community": 4,
       "norm_label": "about.tsx"
     },
     {
       "label": "playfair",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "components_about_playfair",
-      "community": 2,
+      "community": 4,
       "norm_label": "playfair"
+    },
+    {
+      "label": "aboutTypingBlocks",
+      "file_type": "code",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "components_about_abouttypingblocks",
+      "community": 4,
+      "norm_label": "abouttypingblocks"
     },
     {
       "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L19",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "components_about_sociallinks",
-      "community": 2,
+      "community": 4,
       "norm_label": "sociallinks"
     },
     {
       "label": "fadeIn",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L37",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "components_about_fadein",
-      "community": 2,
+      "community": 4,
       "norm_label": "fadein"
     },
     {
       "label": "About()",
       "file_type": "code",
       "source_file": "src/components/About.tsx",
-      "source_location": "L46",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "components_about_about",
-      "community": 2,
+      "community": 4,
       "norm_label": "about()"
     },
     {
@@ -1360,7 +1370,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_contact",
-      "community": 2,
+      "community": 3,
       "norm_label": "contact.tsx"
     },
     {
@@ -1370,7 +1380,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "components_contact_sociallinks",
-      "community": 2,
+      "community": 3,
       "norm_label": "sociallinks"
     },
     {
@@ -1430,7 +1440,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_hero",
-      "community": 2,
+      "community": 4,
       "norm_label": "hero.tsx"
     },
     {
@@ -1440,7 +1450,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_hero_herotypinghello",
-      "community": 2,
+      "community": 4,
       "norm_label": "herotypinghello()"
     },
     {
@@ -1450,7 +1460,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "components_hero_herobackgroundvideo",
-      "community": 2,
+      "community": 4,
       "norm_label": "herobackgroundvideo()"
     },
     {
@@ -1460,7 +1470,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "components_hero_hero",
-      "community": 2,
+      "community": 4,
       "norm_label": "hero()"
     },
     {
@@ -1707,7 +1717,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/components/Projects.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "components_projects_projects",
       "community": 2,
@@ -1720,7 +1730,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_resumeshowcase",
-      "community": 2,
+      "community": 3,
       "norm_label": "resumeshowcase.tsx"
     },
     {
@@ -1730,7 +1740,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "components_resumeshowcase_resumeshowcase",
-      "community": 2,
+      "community": 3,
       "norm_label": "resumeshowcase()"
     },
     {
@@ -1740,7 +1750,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_skills",
-      "community": 23,
+      "community": 2,
       "norm_label": "skills.tsx"
     },
     {
@@ -1750,7 +1760,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_skills_skillstimelinedata",
-      "community": 23,
+      "community": 2,
       "norm_label": "skillstimelinedata"
     },
     {
@@ -1760,7 +1770,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "components_skills_skills",
-      "community": 23,
+      "community": 2,
       "norm_label": "skills()"
     },
     {
@@ -1990,7 +2000,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_accordion",
-      "community": 26,
+      "community": 20,
       "norm_label": "accordion.tsx"
     },
     {
@@ -2000,7 +2010,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "ui_accordion_accordionitem",
-      "community": 26,
+      "community": 20,
       "norm_label": "accordionitem"
     },
     {
@@ -2010,7 +2020,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "ui_accordion_accordiontrigger",
-      "community": 26,
+      "community": 20,
       "norm_label": "accordiontrigger"
     },
     {
@@ -2020,7 +2030,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "ui_accordion_accordioncontent",
-      "community": 26,
+      "community": 20,
       "norm_label": "accordioncontent"
     },
     {
@@ -2357,7 +2367,7 @@
       "label": "ButtonProps",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L34",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "ui_button_buttonprops",
       "community": 4,
@@ -2367,7 +2377,7 @@
       "label": "Button",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L40",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "ui_button_button",
       "community": 4,
@@ -2960,27 +2970,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_count_up_stat",
-      "community": 2,
+      "community": 4,
       "norm_label": "count-up-stat.tsx"
     },
     {
       "label": "CountUpStatProps",
       "file_type": "code",
       "source_file": "src/components/ui/count-up-stat.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "ui_count_up_stat_countupstatprops",
-      "community": 2,
+      "community": 4,
       "norm_label": "countupstatprops"
     },
     {
       "label": "CountUpStat()",
       "file_type": "code",
       "source_file": "src/components/ui/count-up-stat.tsx",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "ui_count_up_stat_countupstat",
-      "community": 2,
+      "community": 4,
       "norm_label": "countupstat()"
     },
     {
@@ -3370,7 +3380,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4item",
-      "community": 2,
+      "community": 4,
       "norm_label": "gallery4item"
     },
     {
@@ -3390,7 +3400,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "ui_gallery4_gallery4",
-      "community": 2,
+      "community": 4,
       "norm_label": "gallery4()"
     },
     {
@@ -3844,6 +3854,36 @@
       "norm_label": "progress"
     },
     {
+      "label": "project-card-sparkles.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/project-card-sparkles.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_project_card_sparkles",
+      "community": 2,
+      "norm_label": "project-card-sparkles.tsx"
+    },
+    {
+      "label": "SPARKLES",
+      "file_type": "code",
+      "source_file": "src/components/ui/project-card-sparkles.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_project_card_sparkles_sparkles",
+      "community": 2,
+      "norm_label": "sparkles"
+    },
+    {
+      "label": "ProjectCardSparkles()",
+      "file_type": "code",
+      "source_file": "src/components/ui/project-card-sparkles.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "ui_project_card_sparkles_projectcardsparkles",
+      "community": 2,
+      "norm_label": "projectcardsparkles()"
+    },
+    {
       "label": "radial-orbital-timeline.tsx",
       "file_type": "code",
       "source_file": "src/components/ui/radial-orbital-timeline.tsx",
@@ -3860,7 +3900,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_radial_orbital_timeline_timelineitem",
-      "community": 23,
+      "community": 2,
       "norm_label": "timelineitem"
     },
     {
@@ -3880,7 +3920,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "ui_radial_orbital_timeline_radialorbitaltimeline",
-      "community": 23,
+      "community": 2,
       "norm_label": "radialorbitaltimeline()"
     },
     {
@@ -3890,7 +3930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_radio_group",
-      "community": 7,
+      "community": 26,
       "norm_label": "radio-group.tsx"
     },
     {
@@ -3900,7 +3940,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_radio_group_radiogroup",
-      "community": 7,
+      "community": 26,
       "norm_label": "radiogroup"
     },
     {
@@ -3910,7 +3950,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_radio_group_radiogroupitem",
-      "community": 7,
+      "community": 26,
       "norm_label": "radiogroupitem"
     },
     {
@@ -3950,7 +3990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_scroll_area",
-      "community": 45,
+      "community": 7,
       "norm_label": "scroll-area.tsx"
     },
     {
@@ -3960,7 +4000,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_scroll_area_scrollarea",
-      "community": 45,
+      "community": 7,
       "norm_label": "scrollarea"
     },
     {
@@ -3970,7 +4010,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_scroll_area_scrollbar",
-      "community": 45,
+      "community": 7,
       "norm_label": "scrollbar"
     },
     {
@@ -3980,7 +4020,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_scroll_velocity",
-      "community": 23,
+      "community": 2,
       "norm_label": "scroll-velocity.tsx"
     },
     {
@@ -3990,7 +4030,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "ui_scroll_velocity_scrollvelocityprops",
-      "community": 23,
+      "community": 2,
       "norm_label": "scrollvelocityprops"
     },
     {
@@ -4000,7 +4040,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_scroll_velocity_scrollvelocity",
-      "community": 23,
+      "community": 2,
       "norm_label": "scrollvelocity"
     },
     {
@@ -4750,7 +4790,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_textarea",
-      "community": 2,
+      "community": 3,
       "norm_label": "textarea.tsx"
     },
     {
@@ -4760,7 +4800,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_textarea_textarea",
-      "community": 2,
+      "community": 3,
       "norm_label": "textarea"
     },
     {
@@ -4974,6 +5014,46 @@
       "norm_label": "tooltipcontent"
     },
     {
+      "label": "typing-paragraphs.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_typing_paragraphs",
+      "community": 4,
+      "norm_label": "typing-paragraphs.tsx"
+    },
+    {
+      "label": "TypingBlock",
+      "file_type": "code",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "ui_typing_paragraphs_typingblock",
+      "community": 4,
+      "norm_label": "typingblock"
+    },
+    {
+      "label": "TypingParagraphsProps",
+      "file_type": "code",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "ui_typing_paragraphs_typingparagraphsprops",
+      "community": 4,
+      "norm_label": "typingparagraphsprops"
+    },
+    {
+      "label": "TypingParagraphs()",
+      "file_type": "code",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "ui_typing_paragraphs_typingparagraphs",
+      "community": 4,
+      "norm_label": "typingparagraphs()"
+    },
+    {
       "label": "use-toast.ts",
       "file_type": "code",
       "source_file": "src/components/ui/use-toast.ts",
@@ -5150,7 +5230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_gsap",
-      "community": 2,
+      "community": 4,
       "norm_label": "gsap.ts"
     },
     {
@@ -5160,7 +5240,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_gsap_prefersreducedmotion",
-      "community": 2,
+      "community": 4,
       "norm_label": "prefersreducedmotion()"
     },
     {
@@ -7216,6 +7296,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/About.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "components_about_abouttypingblocks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7324,6 +7414,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/About.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_button"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_button_button"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7340,6 +7452,28 @@
       "confidence_score": 1.0,
       "source": "components_about",
       "target": "ui_count_up_stat_countupstat"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_typing_paragraphs"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_about",
+      "target": "ui_typing_paragraphs_typingparagraphs"
     },
     {
       "relation": "calls",
@@ -8291,6 +8425,28 @@
       "confidence_score": 1.0,
       "source": "components_projects",
       "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Projects.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_projects",
+      "target": "ui_project_card_sparkles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Projects.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "components_projects",
+      "target": "ui_project_card_sparkles_projectcardsparkles",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10416,6 +10572,28 @@
       "target": "lib_gsap_prefersreducedmotion"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_count_up_stat",
+      "target": "lib_utils_cn"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/count-up-stat.tsx",
@@ -10434,6 +10612,28 @@
       "confidence_score": 1.0,
       "source": "ui_count_up_stat",
       "target": "ui_count_up_stat_countupstatprops"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "ui_count_up_stat_countupstat",
+      "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/count-up-stat.tsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "ui_count_up_stat_countupstat",
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports_from",
@@ -11660,6 +11860,26 @@
       "confidence_score": 1.0,
       "source": "ui_progress",
       "target": "ui_progress_progress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/project-card-sparkles.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_project_card_sparkles",
+      "target": "ui_project_card_sparkles_projectcardsparkles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/project-card-sparkles.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_project_card_sparkles",
+      "target": "ui_project_card_sparkles_sparkles"
     },
     {
       "relation": "imports_from",
@@ -13364,6 +13584,102 @@
       "target": "ui_tooltip_tooltipcontent"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "lib_gsap"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "lib_utils"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "ui_typing_paragraphs_typingblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "ui_typing_paragraphs_typingparagraphs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_typing_paragraphs",
+      "target": "ui_typing_paragraphs_typingparagraphsprops"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "ui_typing_paragraphs_typingparagraphs",
+      "target": "lib_gsap_prefersreducedmotion"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/typing-paragraphs.tsx",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "ui_typing_paragraphs_typingparagraphs",
+      "target": "lib_utils_cn"
+    },
+    {
       "relation": "re_exports",
       "context": "export",
       "confidence": "EXTRACTED",
@@ -14132,5 +14448,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7d3b28699c26ebb780227b8aa582afc6071f511f"
+  "built_at_commit": "7e8ffe77b7bb443bd8b1508e8b87e2be0aebc6af"
 }

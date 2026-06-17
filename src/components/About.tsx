@@ -7,6 +7,8 @@ import { motion, useInView, type Variants } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Playfair_Display } from 'next/font/google';
 import { CountUpStat } from '@/components/ui/count-up-stat';
+import { Button } from '@/components/ui/button';
+import { TypingParagraphs } from '@/components/ui/typing-paragraphs';
 import { prefersReducedMotion } from '@/lib/gsap';
 
 const playfair = Playfair_Display({
@@ -15,6 +17,22 @@ const playfair = Playfair_Display({
 });
 
 const EMAIL = 'vermayash849@gmail.com';
+
+const aboutTypingBlocks = [
+  {
+    text: 'I build modern web products with Next.js, React, Tailwind CSS, and Supabase — from polished interfaces to production-ready backends.',
+  },
+  {
+    text: "I'm especially drawn to AI-powered automation, voice agents, and SaaS tools that turn complex workflows into simple, scalable experiences.",
+  },
+  {
+    text: "Whether it's a hackathon prototype, an internship product, or a client-facing app, I care about clean architecture, thoughtful UX, and shipping work that holds up in the real world.",
+  },
+  {
+    text: 'Stay connected and let the good work begin.',
+    className: 'font-medium text-foreground',
+  },
+];
 
 const socialLinks = [
   {
@@ -108,47 +126,24 @@ const About = () => {
               <span className="font-medium text-accent">Agentic AI</span>.
             </motion.p>
 
-            <motion.div
-              variants={fadeIn}
-              className="mt-8 flex flex-wrap gap-8 sm:mt-10 sm:gap-12"
-            >
-              <CountUpStat value={20} label="Project completed" />
-              <CountUpStat value={10} label="hackathons completed" />
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5">
+              <CountUpStat value={20} label="Project completed" index={0} />
+              <CountUpStat value={10} label="hackathons completed" index={1} />
+            </div>
+
+            <motion.div variants={fadeIn} className="mt-8 max-w-xl sm:mt-10">
+              <TypingParagraphs
+                blocks={aboutTypingBlocks}
+                active={shouldAnimate}
+                className="text-base text-muted-foreground sm:text-lg"
+              />
             </motion.div>
 
-            <motion.div
-              variants={fadeIn}
-              className="mt-8 max-w-xl space-y-5 text-base leading-relaxed text-muted-foreground sm:mt-10 sm:text-lg"
-            >
-              <p>
-                I build modern web products with Next.js, React, Tailwind CSS, and Supabase —
-                from polished interfaces to production-ready backends.
-              </p>
-              <p>
-                I&apos;m especially drawn to AI-powered automation, voice agents, and SaaS tools
-                that turn complex workflows into simple, scalable experiences.
-              </p>
-              <p>
-                Whether it&apos;s a hackathon prototype, an internship product, or a client-facing
-                app, I care about clean architecture, thoughtful UX, and shipping work that
-                holds up in the real world.
-              </p>
+            <motion.div variants={fadeIn} className="mt-6 sm:mt-8">
+              <Button variant="cta" size="lg" className="text-sm shadow-soft sm:text-base" asChild>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              </Button>
             </motion.div>
-
-            <motion.p
-              variants={fadeIn}
-              className="mt-8 text-base font-medium text-foreground sm:mt-10 sm:text-lg"
-            >
-              Stay connected and let the good work begin.
-            </motion.p>
-
-            <motion.a
-              variants={fadeIn}
-              href={`mailto:${EMAIL}`}
-              className="mt-6 inline-block bg-foreground px-8 py-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-foreground/90 sm:mt-8 sm:px-10 sm:py-4 sm:text-base"
-            >
-              {EMAIL}
-            </motion.a>
 
             <motion.div variants={fadeIn} className="mt-6 flex items-center gap-5 sm:mt-8">
               {socialLinks.map(({ href, label, icon: Icon }) => (

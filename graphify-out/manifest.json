@@ -30,7 +30,7 @@
     "semantic_hash": ""
   },
   "components.json": {
-    "mtime": 1781632249.079355,
+    "mtime": 1781675602.8466032,
     "ast_hash": "c24e0471921b27176aac98b141657d15",
     "semantic_hash": ""
   },
@@ -45,12 +45,12 @@
     "semantic_hash": ""
   },
   "next.config.js": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8500128,
     "ast_hash": "5bf0d90862e588bd69b499da6babd007",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8466032,
     "ast_hash": "61712b91bd6bdf1d32a1c9db9dec7c4a",
     "semantic_hash": ""
   },
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
-    "mtime": 1781637136.0515327,
-    "ast_hash": "323fd398aedb4ed52ba1c5fb31e5e628",
+    "mtime": 1781676526.4824288,
+    "ast_hash": "273fe793213cacf90aa08d71ae4cc261",
     "semantic_hash": ""
   },
   "src/components/Achievements.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "src/components/Footer.tsx": {
-    "mtime": 1781632249.079355,
+    "mtime": 1781675602.844055,
     "ast_hash": "ffbc51f759c4fa92c94566ab5dab01a9",
     "semantic_hash": ""
   },
   "src/components/Hero.tsx": {
-    "mtime": 1781634224.1032684,
-    "ast_hash": "9c729fb7f8813556419c29939cf3abbf",
+    "mtime": 1781676413.257127,
+    "ast_hash": "cd2c41acbb102c390c9d225e5902a971",
     "semantic_hash": ""
   },
   "src/components/LogoLoop.tsx": {
@@ -90,7 +90,7 @@
     "semantic_hash": ""
   },
   "src/components/Navigation.tsx": {
-    "mtime": 1781632249.0773451,
+    "mtime": 1781675602.8450608,
     "ast_hash": "567756a7a7024dd17adf7a85b36c1fce",
     "semantic_hash": ""
   },
@@ -100,17 +100,17 @@
     "semantic_hash": ""
   },
   "src/components/Projects.tsx": {
-    "mtime": 1781636497.6627853,
-    "ast_hash": "8fc34bf03419842420a989cb00904f65",
+    "mtime": 1781676632.983845,
+    "ast_hash": "4197d673bb2a334bd05921da066ace42",
     "semantic_hash": ""
   },
   "src/components/ResumeShowcase.tsx": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8475993,
     "ast_hash": "7bb917ef1f796febbb47cdfdb257e72c",
     "semantic_hash": ""
   },
   "src/components/Skills.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.85184,
     "ast_hash": "c24cf52d35d5e46e751ece6107a46748",
     "semantic_hash": ""
   },
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "src/components/ui/button.tsx": {
-    "mtime": 1781632249.0773451,
-    "ast_hash": "2da4d974cd05b28ea5f0bfad0de5732d",
+    "mtime": 1781676413.089219,
+    "ast_hash": "17303468a02c2270343cd74012a00fb4",
     "semantic_hash": ""
   },
   "src/components/ui/calendar.tsx": {
@@ -390,7 +390,7 @@
     "semantic_hash": ""
   },
   ".cursor/skills/generate/SKILL.md": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8475993,
     "ast_hash": "cb119ff88baf8213b644fd80e2699e81",
     "semantic_hash": ""
   },
@@ -440,17 +440,17 @@
     "semantic_hash": ""
   },
   ".cursor/hooks.json": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8500128,
     "ast_hash": "0177331bff653010d7d9d8f6ef5beb37",
     "semantic_hash": ""
   },
   "scripts/graphify-update.js": {
-    "mtime": 1781632249.079355,
+    "mtime": 1781675602.8450608,
     "ast_hash": "7c672e9f2dc5949649b7b1f2e8c87fc3",
     "semantic_hash": ""
   },
   "src/lib/gsap.ts": {
-    "mtime": 1781632249.0753348,
+    "mtime": 1781675602.8426013,
     "ast_hash": "102d686d74e03ea6167aeefd1c27182a",
     "semantic_hash": ""
   },
@@ -460,12 +460,12 @@
     "semantic_hash": ""
   },
   "src/components/Navbar.tsx": {
-    "mtime": 1781632249.0813687,
+    "mtime": 1781675602.8500128,
     "ast_hash": "e9efc69605f154c4672db888afc50629",
     "semantic_hash": ""
   },
   "src/components/YVLogoStroke.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.8500128,
     "ast_hash": "282b3f60a1fed248d08d07d1e64e7aea",
     "semantic_hash": ""
   },
@@ -475,37 +475,37 @@
     "semantic_hash": ""
   },
   "src/components/layout/Container.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.85184,
     "ast_hash": "5030137a604ecd7c82fe90fbcf756ce0",
     "semantic_hash": ""
   },
   "src/components/layout/Section.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.8500128,
     "ast_hash": "fff590d9ff58be62cdf980e9cfdecc8b",
     "semantic_hash": ""
   },
   "src/components/layout/SectionHeader.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.85184,
     "ast_hash": "c5e38ffe37d7938361350bbeed7faa00",
     "semantic_hash": ""
   },
   "src/components/layout/ContentGrid.tsx": {
-    "mtime": 1781632249.0753348,
+    "mtime": 1781675602.8426013,
     "ast_hash": "6862ee0bc284973dae1204c5bf6df7cf",
     "semantic_hash": ""
   },
   "src/components/layout/index.ts": {
-    "mtime": 1781632249.0773451,
+    "mtime": 1781675602.844055,
     "ast_hash": "cdebeec7269b7fb9d3176e3b2dc80997",
     "semantic_hash": ""
   },
   "src/components/ui/scroll-velocity.tsx": {
-    "mtime": 1781632249.079355,
+    "mtime": 1781675602.8466032,
     "ast_hash": "4d78838dfdc591e46a23a736b6673408",
     "semantic_hash": ""
   },
   "src/components/ui/radial-orbital-timeline.tsx": {
-    "mtime": 1781632249.0773451,
+    "mtime": 1781675602.844055,
     "ast_hash": "44b0451529c509ab5f7793335dafe986",
     "semantic_hash": ""
   },
@@ -515,7 +515,7 @@
     "semantic_hash": ""
   },
   "src/components/ui/social-card.tsx": {
-    "mtime": 1781632249.0833802,
+    "mtime": 1781675602.8500128,
     "ast_hash": "f2f01c7731d2c6e139070b414dae4440",
     "semantic_hash": ""
   },
@@ -530,8 +530,18 @@
     "semantic_hash": ""
   },
   "src/components/ui/count-up-stat.tsx": {
-    "mtime": 1781634484.7281854,
-    "ast_hash": "7eee6d02686a60fb540e6470f7f33c05",
+    "mtime": 1781676354.2967048,
+    "ast_hash": "652a3a8779a705aea9ebebafa9356689",
+    "semantic_hash": ""
+  },
+  "src/components/ui/typing-paragraphs.tsx": {
+    "mtime": 1781676354.3137095,
+    "ast_hash": "0683dacb83205ac5ea4ea59829d7455a",
+    "semantic_hash": ""
+  },
+  "src/components/ui/project-card-sparkles.tsx": {
+    "mtime": 1781676650.61552,
+    "ast_hash": "6c7e020e79f356ce5a46dfb220c6b4e5",
     "semantic_hash": ""
   }
 }

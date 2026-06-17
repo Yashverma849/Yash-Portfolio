@@ -214,9 +214,9 @@ const Hero = () => {
                   </Button>
                   <Button
                     type="button"
-                    variant="outline"
+                    variant="outlineNeutral"
                     size="lg"
-                    className="border-neutral-300 bg-white/90 text-sm text-neutral-900 hover:bg-white sm:text-base"
+                    className="text-sm sm:text-base"
                     onClick={() => {
                       window.location.href = '/api/oauth/authorize';
                     }}
