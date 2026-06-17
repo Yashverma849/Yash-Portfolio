@@ -97,7 +97,7 @@ const About = () => {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 xl:gap-20">
           <motion.div
             initial="hidden"
             animate={shouldAnimate ? 'visible' : 'hidden'}
@@ -165,7 +165,7 @@ const About = () => {
             initial={{ opacity: 0, y: 32 }}
             animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
             transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center self-center lg:justify-end"
           >
             <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden bg-secondary/80 lg:max-h-[min(82vh,760px)] lg:max-w-none">
               <Image
