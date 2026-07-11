@@ -1,49 +1,83 @@
 'use client'
 
-import { useEffect, useState } from "react";
-import { MessageCircle, Send, Calendar } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { MessageCircle, Send } from "lucide-react";
 import Image from "next/image";
+
+type ChatMessage = {
+  role: "user" | "bot";
+  text: string;
+};
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "bot", text: "Hi 👋 How can I help you today?" },
   ]);
   const [input, setInput] = useState("");
-  const [isConnecting, setIsConnecting] = useState(false);
-
-  const connectCalendar = async () => {
-    setIsConnecting(true);
-    try {
-      window.location.href = '/api/oauth/authorize';
-    } catch (error) {
-      console.error('Calendar connection error:', error);
-      setMessages((prev) => [
-        ...prev,
-        { role: "bot", text: "Sorry, I couldn't initiate the calendar connection. Please try again." },
-      ]);
-      setIsConnecting(false);
-    }
-  };
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const openChat = () => setOpen(true);
+    const openChatForMeeting = () => {
+      setOpen(true);
+      setInput("I'd like to schedule a meeting");
+    };
 
     window.addEventListener('hero:ask-anything', openChat);
-    return () => window.removeEventListener('hero:ask-anything', openChat);
+    window.addEventListener('hero:schedule-meeting', openChatForMeeting);
+    return () => {
+      window.removeEventListener('hero:ask-anything', openChat);
+      window.removeEventListener('hero:schedule-meeting', openChatForMeeting);
+    };
   }, []);
 
-  const sendMessage = async () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isLoading, open]);
 
+  const formatBotResponse = (data: {
+    response?: string;
+    message?: string;
+    calendarLink?: string;
+    eventLink?: string;
+    link?: string;
+  }) => {
+    let responseText = data.response || data.message || "I received your message but couldn't generate a response.";
+    responseText = responseText.replace(/\n/g, '<br>');
+
+    if (data.calendarLink || data.eventLink || data.link) {
+      const link = data.calendarLink || data.eventLink || data.link;
+      if (link && !responseText.includes(link)) {
+        responseText += `<br><br><a href="${link}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">📅 View Calendar Event</a>`;
+      }
+    }
+
+    const hasHtmlLinks = /<a\s+[^>]*href/i.test(responseText);
+
+    if (!hasHtmlLinks) {
+      const urlRegex = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/gi;
+      responseText = responseText.replace(urlRegex, (url: string) => {
+        const fullUrl = url.startsWith('http') ? url : `https://${url}`;
+        return `<a href="${fullUrl}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">${url}</a>`;
+      });
+    }
+
+    return responseText;
+  };
+
+  const sendMessage = async () => {
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = input.trim();
     setMessages((prev) => [
       ...prev,
-      { role: "user", text: input },
+      { role: "user", text: userMessage },
     ]);
-
-    const userMessage = input;
     setInput("");
+    setIsLoading(true);
 
     try {
       const response = await fetch(`/api/chat`, {
@@ -101,41 +135,10 @@ export default function Chatbot() {
       }
 
       const data = await response.json();
-      
-      // Log the full response for debugging
-      console.log('Chat API response:', data);
-      
-      // Extract the response text
-      let responseText = data.response || data.message || "I received your message but couldn't generate a response.";
-      
-      // Convert newlines to <br> tags for proper display
-      responseText = responseText.replace(/\n/g, '<br>');
-      
-      // If there's a separate calendar link field, append it to the response
-      if (data.calendarLink || data.eventLink || data.link) {
-        const link = data.calendarLink || data.eventLink || data.link;
-        if (link && !responseText.includes(link)) {
-          responseText += `<br><br><a href="${link}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">📅 View Calendar Event</a>`;
-        }
-      }
-      
-      // Convert plain text URLs to HTML links (only if not already in HTML format)
-      // Check if response already contains HTML links
-      const hasHtmlLinks = /<a\s+[^>]*href/i.test(responseText);
-      
-      if (!hasHtmlLinks) {
-        // Simple regex to match URLs that aren't already in HTML
-        const urlRegex = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/gi;
-        responseText = responseText.replace(urlRegex, (url: string) => {
-          // Add https:// if it's a www link
-          const fullUrl = url.startsWith('http') ? url : `https://${url}`;
-          return `<a href="${fullUrl}" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: underline; font-weight: 600; word-break: break-all;">${url}</a>`;
-        });
-      }
 
       setMessages((prev) => [
         ...prev,
-        { role: "bot", text: responseText },
+        { role: "bot", text: formatBotResponse(data) },
       ]);
     } catch (error) {
       console.error('Chat error:', error);
@@ -143,6 +146,8 @@ export default function Chatbot() {
         ...prev,
         { role: "bot", text: "Sorry, I'm having trouble connecting right now. Please check your internet connection and try again." },
       ]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -188,18 +193,6 @@ export default function Chatbot() {
             </button>
           </div>
 
-          {/* Connect Calendar Button */}
-          <div className="px-4 py-2 border-b border-green-200">
-            <button
-              onClick={connectCalendar}
-              disabled={isConnecting}
-              className="w-full flex items-center justify-center gap-2 rounded-md bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 px-3 py-2 text-sm text-white transition-colors"
-            >
-              <Calendar size={16} />
-              {isConnecting ? 'Connecting...' : 'Connect Google Calendar'}
-            </button>
-          </div>
-
           {/* Messages */}
           <div className="h-64 overflow-y-auto overflow-x-hidden p-4 space-y-3 text-sm">
             {messages.map((msg, i) => (
@@ -224,6 +217,16 @@ export default function Chatbot() {
                 )}
               </div>
             ))}
+            {isLoading && (
+              <div className="max-w-[80%] rounded-lg bg-green-100 px-3 py-2 text-gray-600">
+                <span className="inline-flex items-center gap-1">
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-green-500 [animation-delay:-0.2s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-green-500 [animation-delay:-0.1s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-green-500" />
+                </span>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Input */}
@@ -231,13 +234,15 @@ export default function Chatbot() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              placeholder="Type a message..."
-              className="flex-1 rounded-md bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 min-w-0"
+              onKeyDown={(e) => e.key === "Enter" && !isLoading && sendMessage()}
+              placeholder={isLoading ? "Waiting for response..." : "Type a message..."}
+              disabled={isLoading}
+              className="flex-1 rounded-md bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 min-w-0 disabled:opacity-60"
             />
             <button
               onClick={sendMessage}
-              className="rounded-md bg-green-500 px-3 py-2 text-sm text-white hover:bg-green-600 transition flex items-center justify-center flex-shrink-0"
+              disabled={isLoading || !input.trim()}
+              className="rounded-md bg-green-500 px-3 py-2 text-sm text-white hover:bg-green-600 transition flex items-center justify-center flex-shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Send size={16} />
             </button>

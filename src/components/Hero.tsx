@@ -217,9 +217,7 @@ const Hero = () => {
                     variant="outlineNeutral"
                     size="lg"
                     className="text-sm sm:text-base"
-                    onClick={() => {
-                      window.location.href = '/api/oauth/authorize';
-                    }}
+                    onClick={() => window.dispatchEvent(new CustomEvent('hero:schedule-meeting'))}
                   >
                     <Calendar className="h-4 w-4" />
                     Schedule a meeting
